@@ -10,6 +10,6 @@ class AGMController extends Controller
 {
     public function index (){
         $agms = AGMForm::all();
-        return view('frontend.agm-minute.index',compact('agms'));
+        return view('frontend.pages.agm',compact('agms'));
     }
 }

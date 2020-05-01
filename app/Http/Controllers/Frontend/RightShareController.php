@@ -10,6 +10,6 @@ class RightShareController extends Controller
 {
     public function index(){
         $rights = RightShare::all();
-        return view('frontend.right-share.index',compact('rights'));
+        return view('frontend.pages.right-share',compact('rights'));
     }
 }

@@ -259,7 +259,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{url('/admin/view-roles')}}" class="nav-link">
+                        <a href="{{route('surveyor-application.index')}}" class="nav-link">
                                 <i class="fas fa-user-tag nav-icon"></i>
                                 <p>Surveyor Listing Applicatio Forms</p>
                             </a>

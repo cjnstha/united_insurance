@@ -25,7 +25,7 @@ class ClaimFormController extends Controller
             $data = $request->all();
             $claims = new ClaimForm;
             $claims->claim_name = $data['claim_name'];
-            $claims->claim_files = $data['claim_files'];
+            $claims->claim_files = request()->file('claim_files')->store('claim', 'public');
             $claims->status = $data['status'];
             $claims->save();
             return redirect()->route('claim.index')->with('flash_message_success', 'Claim Form Added Successfully');
@@ -44,7 +44,7 @@ class ClaimFormController extends Controller
             $data = $request->all();
             $claims = ClaimForm::findOrFail($id);
             $claims->claim_name = $data['claim_name'];
-            $claims->claim_files = $data['claim_files'];
+            $claims->claim_files = request()->file('claim_files')->store('claim', 'public');
             $claims->status = $data['status'];
             $claims->update();
             return redirect()->route('claim.index')->with('flash_message_success', 'Claim Form Updated Successfully');

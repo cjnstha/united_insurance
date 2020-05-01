@@ -10,6 +10,6 @@ class ClaimFormController extends Controller
 {
     public function index(){
         $claims = ClaimForm::all();
-        return view('frontend.claim-form.index',compact('claims'));
+        return view('frontend.pages.claim-form',compact('claims'));
     }
 }

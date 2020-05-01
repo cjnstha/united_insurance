@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>AGM Minute Form</h1>
+                        <h1>Surveyor Application Form</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">AGM Minute Form</li>
+                            <li class="breadcrumb-item active">Surveyor Application Form</li>
                         </ol>
                     </div>
                 </div>
@@ -28,22 +28,22 @@
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-user-plus"></i> Add AGM Minute</h3>
+                                <h3 class="card-title"><i class="fas fa-user-plus"></i> Add Surveyor Application</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form role="form" action="{{ route('agm.store') }}" method="POST" enctype="multipart/form-data">
+                            <form role="form" action="{{ route('surveyor-application.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="">Name*</label>
-                                        <input type="text" class="form-control" id="" name="agm_name"
+                                        <input type="text" class="form-control" id="" name="surveyor_name"
                                                placeholder="Enter Name" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Files*</label>
                                         <input type="file" class="form-control" id=""
-                                               name="agm_files" required>
+                                               name="surveyor_files" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Status</label>
@@ -57,7 +57,7 @@
                                 <!-- /.card-body -->
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary">Submit</button>
-                                    <a href="{{url('/admin/view-users')}}" class="btn btn-outline-danger">Cancel</a>
+                                    <a href="{{route('surveyor-application.index')}}" class="btn btn-outline-danger">Cancel</a>
                                 </div>
                             </form>
                         </div>

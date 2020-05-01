@@ -22,7 +22,7 @@ class AGMController extends Controller
             $data = $request->all();
             $agms = new AGMForm;
             $agms->agm_name = $data['agm_name'];
-            $agms->agm_files = $data['agm_files'];
+            $agms->agm_files = request()->file('agm_files')->store('agm', 'public');
             $agms->status = $data['status'];
             $agms->save();
             return redirect()->route('agm.index')->with('flash_message_success','AGM Minute Added Successfully');
@@ -39,7 +39,7 @@ class AGMController extends Controller
             $data = $request->all();
             $agms = AGMForm::findOrFail($id);
             $agms->agm_name = $data['agm_name'];
-            $agms->agm_files = $data['agm_files'];
+            $agms->agm_files = request()->file('agm_files')->store('agm', 'public');
             $agms->status = $data['status'];
             $agms->update();
             return redirect()->route('agm.index')->with('flash_message_success','AGM Minute Updated Successfully');

@@ -17,56 +17,35 @@
                             <div class="pro-insurance-data">
                                 <img src="{{ asset('images/icons/car.svg') }}" alt="Car Insurance" title="Car"
                                      class="product-img" style="height: 60px">
-                                <h5 class="product-name">Car</h5>
-                            </div>
-                        </div>
-                        <div class="card-wrapper">
-                            <div class="pro-insurance-data">
-                                <img src="{{ asset('images/icons/motorcycle.svg') }}" alt="Bike Insurance" title="Bike "
-                                     class="product-img" style="height: 60px">
-                                <h5 class="product-name">Bike </h5>
+                                <h5 class="product-name">Motor </h5>
                             </div>
                         </div>
                         <div class="card-wrapper">
                             <div class="pro-insurance-data">
                                 <img src="{{ asset('images/icons/home.svg') }}" alt="Bharti AXA Travel Insurance"
                                      title="Travel" class="product-img" style="height: 60px">
-                                <h5 class="product-name">Travel</h5>
+                                <h5 class="product-name">Property</h5>
                             </div>
                         </div>
-                        <div class="card-wrapper">
+                         <div class="card-wrapper">
                             <div class="pro-insurance-data">
-                                <img src="{{ asset('images/icons/tourism.svg') }}" alt="Bharti AXA Health Insurance"
-                                     title="Health" class="product-img" style="height: 60px">
-                                <h5 class="product-name">Health</h5>
-                            </div>
-                        </div>
-                        <div class="card-wrapper">
-                            <div class="pro-insurance-data">
-                                <img src="{{ asset('images/icons/car.svg') }}" alt="Car Insurance" title="Car"
-                                     class="product-img" style="height: 60px">
-                                <h5 class="product-name">Car</h5>
-                            </div>
-                        </div>
-                        <div class="card-wrapper">
-                            <div class="pro-insurance-data">
-                                <img src="{{ asset('images/icons/motorcycle.svg') }}" alt="Bike Insurance" title="Bike "
-                                     class="product-img" style="height: 60px">
-                                <h5 class="product-name">Bike </h5>
-                            </div>
-                        </div>
-                        <div class="card-wrapper">
-                            <div class="pro-insurance-data">
-                                <img src="{{ asset('images/icons/home.svg') }}" alt="Bharti AXA Travel Insurance"
+                                <img src="{{ asset('images/icons/micro.jpg') }}" alt="Bharti AXA Travel Insurance"
                                      title="Travel" class="product-img" style="height: 60px">
-                                <h5 class="product-name">Travel</h5>
+                                <h5 class="product-name">Micro</h5>
+                            </div>
+                        </div>
+                        <div class="card-wrapper">
+                            <div class="pro-insurance-data">
+                                <img src="{{ asset('images/icons/fire.gif') }}" alt="Car Insurance" title="Car"
+                                     class="product-img" style="height: 60px">
+                                <h5 class="product-name">Fire</h5>
                             </div>
                         </div>
                         <div class="card-wrapper">
                             <div class="pro-insurance-data">
                                 <img src="{{ asset('images/icons/tourism.svg') }}" alt="Bharti AXA Health Insurance"
                                      title="Health" class="product-img" style="height: 60px">
-                                <h5 class="product-name">Health</h5>
+                                <h5 class="product-name">Home</h5>
                             </div>
                         </div>
                     </div>
@@ -168,43 +147,8 @@
                                 <div class="single-insurance">
                                     <div class="single-insurance-content">
                                         <span class="service-icons"><img
-                                                src="{{ asset('images/icons/car.svg') }}"> </span>
-                                        <h3><a href="insurance_single.html">Car Insurance</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum
-                                            ipsa, a voluptates libero possimus sapiente.</p>
-                                        <div class="read-more">
-                                            <a href="insurance_single.html">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-insurance">
-                                    <div class="single-insurance-content">
-                                        <span class="service-icons"><img
                                                 src="{{ asset('images/icons/home.svg') }}"> </span>
                                         <h3><a href="insurance_single.html">Home Insurance</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum
-                                            ipsa, a voluptates libero possimus sapiente.</p>
-                                        <div class="read-more">
-                                            <a href="insurance_single.html">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-insurance">
-                                    <div class="single-insurance-content">
-                                        <span class="service-icons"><img src="{{ asset('images/icons/tourism.svg') }}"> </span>
-                                        <h3><a href="insurance_single.html">Travel Insurance</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum
-                                            ipsa, a voluptates libero possimus sapiente.</p>
-                                        <div class="read-more">
-                                            <a href="insurance_single.html">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-insurance">
-                                    <div class="single-insurance-content">
-                                        <span class="service-icons"><img
-                                                src="{{ asset('images/icons/heart.svg') }}"> </span>
-                                        <h3><a href="insurance_single.html">Health Insurance</a></h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum
                                             ipsa, a voluptates libero possimus sapiente.</p>
                                         <div class="read-more">
@@ -228,7 +172,7 @@
                                     <div class="single-insurance-content">
                                         <span class="service-icons"><img
                                                 src="{{ asset('images/icons/home.svg') }}"> </span>
-                                        <h3><a href="insurance_single.html">Home Insurance</a></h3>
+                                        <h3><a href="insurance_single.html">Property Insurance</a></h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum
                                             ipsa, a voluptates libero possimus sapiente.</p>
                                         <div class="read-more">
@@ -239,31 +183,7 @@
                                 <div class="single-insurance">
                                     <div class="single-insurance-content">
                                         <span class="service-icons"><img src="{{ asset('images/icons/tourism.svg') }}"> </span>
-                                        <h3><a href="insurance_single.html">Travel Insurance</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum
-                                            ipsa, a voluptates libero possimus sapiente.</p>
-                                        <div class="read-more">
-                                            <a href="insurance_single.html">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-insurance">
-                                    <div class="single-insurance-content">
-                                        <span class="service-icons"><img
-                                                src="{{ asset('images/icons/heart.svg') }}"> </span>
-                                        <h3><a href="insurance_single.html">Health Insurance</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum
-                                            ipsa, a voluptates libero possimus sapiente.</p>
-                                        <div class="read-more">
-                                            <a href="insurance_single.html">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-insurance">
-                                    <div class="single-insurance-content">
-                                        <span class="service-icons"><img
-                                                src="{{ asset('images/icons/fire.svg') }}"> </span>
-                                        <h3><a href="insurance_single.html">Fire Insurance</a></h3>
+                                        <h3><a href="insurance_single.html">Micro Insurance</a></h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum
                                             ipsa, a voluptates libero possimus sapiente.</p>
                                         <div class="read-more">

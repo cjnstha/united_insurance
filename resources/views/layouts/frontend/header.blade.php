@@ -55,7 +55,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="logo" href="index-2.html">
+							<a class="logo" href="{{url('/')}}">
 								<img src="{{ asset('asset/images/logo/logo.png') }}" alt="Yellow Hats">
 							</a>
 						</div>
@@ -63,7 +63,7 @@
 						<div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-left">
 								<li class="active">
-									<a class="active" href="index-2.html">Home</a>
+									<a class="active" href="{{url('/')}}">Home</a>
 								</li>
 
 								<!-- li end -->
@@ -72,7 +72,7 @@
 										<ul class="dropdown-menu">
 											<li><a href="{{url('/about-us')}}">Information About Company</a></li>
 											<li><a href="{{url('/board-of-directors')}}">Board of Directors</a></li>
-											<li><a href="{{url('team-member')}}">Team Members</a></li>
+											<li><a href="{{url('/team-member')}}">Team Members</a></li>
 											<li><a href="{{url('/branch-list')}}">Branch List</a></li>
 											<li><a href="{{url('/agents')}}">Agent</a></li>
 											<li><a href="{{url('/surveyors')}}">Surveyors</a></li>
@@ -101,8 +101,8 @@
 										<li><a href="{{url('/premium-structure')}}">Premium Structure</a></li>
 										<li><a href="{{url('/investment')}}">Investment</a></li>
 										<li><a href="{{url('/reserves')}}">Reserve</a></li>
-										<li><a href="quaterly-report.html">Quaterly Report</a></li>
-										<li><a href="financial-report.html">Financial Report</a></li>
+										<li><a href="{{url('/quarter-reports')}}">Quarterly Report</a></li>
+										<li><a href="{{url('/financial-reports')}}">Financial Report</a></li>
 									</ul>
 								</li>
 								<!-- li end -->
@@ -120,13 +120,13 @@
 								<li class="has-dropdown">
 									<a href="#" data-toggle="dropdown" class="dropdown-toggle">Downloads</a>
 									<ul class="dropdown-menu">
-										<li><a href="AGM-minute.html">AGM Minute</a></li>
-										<li><a href="KYC-forms.html">KYC Forms</a></li>
-										<li><a href="policy-proposal-form.html">Policy Proposal Form</a></li>
-										<li><a href="right-share.html">Right Share</a></li>
-										<li><a href="claim-form.html">Claim Form</a></li>
-										<li><a href="surveyor-listing-application-form.html">Surveyor Listing Application Form</a></li>
-										<li><a href="branch-download.html">Branch Download</a></li>
+										<li><a href="{{url('/agm-minute')}}">AGM Minute</a></li>
+										<li><a href="{{url('/kyc-form')}}">KYC Forms</a></li>
+										<li><a href="{{url('/policy-proposal-form')}}">Policy Proposal Form</a></li>
+										<li><a href="{{url('/right-share')}}">Right Share</a></li>
+										<li><a href="{{url('/claim-form')}}">Claim Form</a></li>
+										<li><a href="{{url('/surveyor-listing-application-form')}}">Surveyor Listing Application Form</a></li>
+{{--										<li><a href="branch-download.html">Branch Download</a></li>--}}
 									</ul>
 								</li>
 								<!-- li end -->

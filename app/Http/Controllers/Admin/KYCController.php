@@ -22,7 +22,7 @@ class KYCController extends Controller
             $data = $request->all();
             $kycs = new KYC;
             $kycs->kyc_name = $data['kyc_name'];
-            $kycs->kyc_file = $data['kyc_file'];
+            $kycs->kyc_file = request()->file('kyc_file')->store('kyc', 'public');
             $kycs->status = $data['status'];
             $kycs->save();
             return redirect()->route('kyc.index')->with('flash_message_success','KYC Form Added Successfully');
@@ -39,7 +39,7 @@ class KYCController extends Controller
             $data = $request->all();
             $kycs = KYC::findOrFail($id);
             $kycs->kyc_name = $data['kyc_name'];
-            $kycs->kyc_file = $data['kyc_file'];
+            $kycs->kyc_file = request()->file('kyc_file')->store('kyc', 'public');
             $kycs->status = $data['status'];
             $kycs->update();
             return redirect()->route('kyc.index')->with('flash_message_success','AGM Minute Updated Successfully');

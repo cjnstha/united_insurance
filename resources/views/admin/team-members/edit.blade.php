@@ -55,6 +55,10 @@
                     <label for="exampleInputEmail1">Phone Number</label>
                     <input type="text" class="form-control"  name="team_phone" placeholder="Enter Phone Number" required value="{{$teams->team_phone}}">
                   </div>
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">Experience</label>
+                    <input type="text" class="form-control"  name="experience" placeholder="Enter Phone Number" required value="{{$teams->experience}}">
+                  </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Description</label>
                       <textarea class="form-control" id="summary-ckeditor3" name="team_description">{{$teams->team_description}}</textarea>

@@ -131,7 +131,7 @@ Route::prefix('/admin')->namespace('Admin')->group(function () {
         //Financial Report Controller//
         Route::get('financial', 'FinancialController@index')->name('financial.index');
         Route::get('financial/create', 'FinancialController@create')->name('financial.create');
-        Route::post('quarter/store', 'FinancialController@store')->name('financial.store');
+        Route::post('financial/store', 'FinancialController@store')->name('financial.store');
         Route::get('financial/edit/{id}', 'FinancialController@edit')->name('financial.edit');
         Route::post('financial/update/{id}', 'FinancialController@update')->name('financial.update');
         Route::get('financial/destroy/{id}', 'FinancialController@destroy')->name('financial.destroy');
@@ -186,6 +186,13 @@ Route::prefix('/admin')->namespace('Admin')->group(function () {
         Route::post('policyForm/update/{id}', 'PolicyProposalController@update')->name('policyForm.update');
         Route::get('policyForm/destroy/{id}', 'PolicyProposalController@destroy')->name('policyForm.destroy');
 
+        //Surveyor Listing Application Routes
+        Route::get('surveyor-application', 'SurveyorListingController@index')->name('surveyor-application.index');
+        Route::get('surveyor-application/create', 'SurveyorListingController@create')->name('surveyor-application.create');
+        Route::post('surveyor-application/store', 'SurveyorListingController@store')->name('surveyor-application.store');
+        Route::get('surveyor-application/edit/{id}', 'SurveyorListingController@edit')->name('surveyor-application.edit');
+        Route::post('surveyor-application/update/{id}', 'SurveyorListingController@update')->name('surveyor-application.update');
+        Route::get('surveyor-application/destroy/{id}', 'SurveyorListingController@destroy')->name('surveyor-application.destroy');
     });
 
 
@@ -201,9 +208,11 @@ Route::prefix('/')->namespace('Frontend')->group(function () {
 
     //BOD Routes//
     Route::get('/board-of-directors', 'BODController@index');
+    Route::get('/bod-detail/{id}','BODController@detail');
 
     //Team Members Routes//
     Route::get('/team-member', 'TeamMemberController@index');
+    Route::get('/team-member-detail/{id}', 'TeamMemberController@detail');
 
     //Branch List Routes//
     Route::get('/branch-list', 'BranchListController@index');
@@ -232,6 +241,13 @@ Route::prefix('/')->namespace('Frontend')->group(function () {
     //Reserves Routes//
     Route::get('/reserves', 'ReserveController@index');
 
+    //Quaterly Reports Routes//
+    Route::get('/quarter-reports', 'QuarterlyReportController@index');
+
+    //Financial Report Routes//
+    Route::get('/financial-reports', 'FinancialReportController@index');
+
+
     //Re-insurers Routes//
     Route::get('/re-insurers', 'ReinsurerController@index');
 
@@ -256,16 +272,16 @@ Route::prefix('/')->namespace('Frontend')->group(function () {
     //Our Products Routes//
 
     //Property Insurance Routes//
-    Route::get('/property-insurance','PropertyInsuranceController@index');
+    Route::get('/property-insurance', 'PropertyInsuranceController@index');
 });
 
 Route::get('locale/{locale}', function ($locale) {
 
-	Session::put('locale', $locale);
+    Session::put('locale', $locale);
 
-	return redirect()->back();
+    return redirect()->back();
 
-	/* This link will add session of language when they click to change language*/
+    /* This link will add session of language when they click to change language*/
 
 });
 

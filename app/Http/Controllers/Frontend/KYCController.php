@@ -10,6 +10,6 @@ class KYCController extends Controller
 {
     public function index(){
         $kycs = KYC::all();
-        return view('frontend.kyc.index',compact('kycs'));
+        return view('frontend.pages.kyc-form',compact('kycs'));
     }
 }

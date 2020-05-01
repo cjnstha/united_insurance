@@ -10,6 +10,6 @@ class PolicyProposalController extends Controller
 {
     public function index(){
         $policies = PolicyProposal::all();
-        return view('frontend.policy-proposal.index',compact('policies'));
+        return view('frontend.pages.policy-proposal-form',compact('policies'));
     }
 }

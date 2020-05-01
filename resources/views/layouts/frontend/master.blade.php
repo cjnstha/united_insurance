@@ -45,7 +45,7 @@
 
 
         <!-- Start Footer -->
-@include('layouts.frontend.footer')
+{{--@include('layouts.frontend.footer')--}}
         <!-- End Footer  -->
     </div>
 </div>

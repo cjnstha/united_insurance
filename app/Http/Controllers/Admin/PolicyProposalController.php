@@ -22,7 +22,7 @@ class PolicyProposalController extends Controller
             $data = $request->all();
             $policies = new PolicyProposal;
             $policies->policy_name = $data['policy_name'];
-            $policies->policy_file = $data['policy_file'];
+            $policies->policy_file = request()->file('policy_file')->store('policy', 'public');
             $policies->status = $data['status'];
             $policies->save();
             return redirect()->route('policyForm.index')->with('flash_message_success','Policy Proposal Form Added Successfully');
@@ -40,7 +40,7 @@ class PolicyProposalController extends Controller
             $data = $request->all();
             $policies = PolicyProposal::findOrFail($id);
             $policies->policy_name = $data['policy_name'];
-            $policies->policy_file = $data['policy_file'];
+            $policies->policy_file = request()->file('policy_file')->store('policy', 'public');
             $policies->status = $data['status'];
             $policies->update();
             return redirect()->route('policyForm.index')->with('flash_message_success', 'Policy Proposal Form Updated Successfully');

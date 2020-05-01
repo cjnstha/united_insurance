@@ -22,7 +22,7 @@ class RightShareController extends Controller
             $data = $request->all();
             $rights = new RightShare;
             $rights->rightshare_name = $data['rightshare_name'];
-            $rights->rightshare_file = $data['rightshare_file'];
+            $rights->rightshare_file = request()->file('rightshare_file')->store('right-share', 'public');
             $rights->status = $data['status'];
             $rights->save();
             return redirect()->route('rightshare.index')->with('flash_message_success','RightShare Form Added Successfully');
@@ -39,7 +39,7 @@ class RightShareController extends Controller
             $data = $request->all();
             $rights = RightShare::findOrFail($id);
             $rights->rightshare_name = $data['rightshare_name'];
-            $rights->rightshare_file = $data['rightshare_file'];
+            $rights->rightshare_file = request()->file('rightshare_file')->store('right-share', 'public');
             $rights->status = $data['status'];
             $rights->update();
             return redirect()->route('rightshare.index')->with('flash_message_success','Right Share Form Updated Successfully');

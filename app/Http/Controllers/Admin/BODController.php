@@ -23,8 +23,8 @@ class BODController extends Controller
         if($request->isMethod('post')){
             $data = $request->all();
             $bod = new BOD;
-            if ($request->hasfile('image')) {
-                $image =$request->file('image');
+            if ($request->hasfile('bod_imag')) {
+                $image =$request->file('bod_imag');
                 $ext = $image->getClientOriginalExtension();
                 $destination = 'images/bod';
                 $photo_name = md5(time());
@@ -33,6 +33,9 @@ class BODController extends Controller
                 $bod->bod_imag = $photo_original_name;
             }
             $bod->bod_name = $data['bod_name'];
+            $bod->experience = $data['experience'];
+            $bod->email = $data['email'];
+            $bod->contact = $data['contact'];
             $bod->bod_name_nep = $data['bod_name_np'];
             $bod->bod_position = $data['bod_position'];
             $bod->bod_position_nep = $data['bod_position_np'];

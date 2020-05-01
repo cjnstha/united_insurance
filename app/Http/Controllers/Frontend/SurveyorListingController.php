@@ -10,6 +10,6 @@ class SurveyorListingController extends Controller
 {
     public function index(){
         $surveyors = SurveyorListing::all();
-        return view('frontend.surveyor-listing.index',compact('surveyors'));
+        return view('frontend.pages.surveyor-listing',compact('surveyors'));
     }
 }
