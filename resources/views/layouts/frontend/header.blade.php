@@ -133,7 +133,7 @@
 
 								<!-- li end -->
 								<li class="has-dropdown pull-left margin-right-zero">
-									<a href="contact.html">Contact Us</a>
+									<a href="{{url('/contact-us')}}">Contact Us</a>
 								</li>
 								<!-- li end -->
 							</ul>

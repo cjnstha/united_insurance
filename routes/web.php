@@ -273,6 +273,10 @@ Route::prefix('/')->namespace('Frontend')->group(function () {
 
     //Property Insurance Routes//
     Route::get('/property-insurance', 'PropertyInsuranceController@index');
+
+
+    //Contact Us Routes//
+    Route::match(['get','post'],'page/contact','ContactUsController@contact');
 });
 
 Route::get('locale/{locale}', function ($locale) {
