@@ -43,13 +43,12 @@
                                     <td data-label="Name" title="Proposal Form">{{$policy->policy_name}}</td>
                                     <td data-label="Date Added">{{$policy->updated_at->toFormattedDateString()}}</td>
                                     <td data-label="View File">
-                                        <a class="btn btnViewFile"
-                                           data-target="{{asset("storage/$policy->policy_name")}}"
-                                           data-title="{{$policy->policy_name}}" data-modal="downloadModal"
-                                           title="View File"><i class="fa fa-eye"></i> View</a>
+                                        <a href="{{asset($policy->policy_file)}}" class="pdf_download transition3s">
+                                            View
+                                        </a>
                                     </td>
                                     <td data-label="Download File">
-                                        <a href="../public/storage/{{$policy->policy_file}}" title="Download Attachment"
+                                        <a href="{{asset($policy->policy_file)}}" title="Download Attachment"
                                            class='btn btnViewFile' download="" target="_blank"><span><i
                                                     class="fa fa-file-pdf-o" aria-hidden="true"></i></span> Download <i
                                                 class="fa fa-download" aria-hidden="true"></i></a>

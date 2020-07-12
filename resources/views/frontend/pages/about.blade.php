@@ -24,7 +24,9 @@
                         <h3>United Insurance Company (Nepal) Ltd.</h3>
                     </div>
                     <div class="description-welcome inner-about-us text-left">
-                        {!! $abouts[0]->introduction !!}
+                        @isset($abouts)
+                            {!! $about->introduction !!}
+                        @endisset
                     </div>
                 </div>
             </div>
@@ -35,50 +37,6 @@
     <!-- End Our Welcome -->
     <!-- Start Our Vision -->
 
-    <section id="happy-customers" class="light-wrapper">
-        <div class="container inner">
-            <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12 text-center br-1">
-                    <div class="fact">
-                        <div class="fact-number timer" data-perc="35">
-                            <span class="factor text-white"></span>
-                        </div>
-                        <span class="fact-title">years of experience</span>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 col-xs-12 text-center br-1">
-                    <div class="fact">
-                        <div class="fact-number timer" data-perc="1500000">
-                            <span class="factor  text-white"></span>
-                        </div>
-                        <span class="fact-title">Satisfied Customers</span>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 col-xs-12 text-center br-1">
-                    <div class="fact">
-                        <div class="fact-number timer" data-perc="24">
-
-                            <span class="factor  text-white"></span>
-                            <span class="small-sub-title"> Hrs</span>
-                        </div>
-                        <span class="fact-title">Customer Support</span>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 col-xs-12 text-center br-1">
-                    <div class="fact">
-                        <div class="fact-number timer" data-perc="100">
-                            <span class="factor  text-white"></span>
-                            <span class="small-sub-title percentage">%</span>
-                        </div>
-                        <span class="fact-title">Secure & Stable</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- End Our Vision  -->
     <section id="Welcome" class="light-wrapper">
@@ -91,7 +49,9 @@
                         <h5>Our Vision</h5>
                         <div class="scrollbar" id="style-3">
                             <div class="force-overflow">
-                                {!! $abouts[0]->vision !!}
+                                 @isset($abouts)
+                            {!! $about->vision !!}
+                        @endisset
                             </div>
                         </div>
                     </div>
@@ -110,7 +70,9 @@
                         <h5>Our Mission</h5>
                         <div class="scrollbar" id="style-3">
                             <div class="force-overflow">
-                                {!! $abouts[0]->mission !!}
+                                 @isset($abouts)
+                            {!! $about->mission !!}
+                        @endisset
                             </div>
                         </div>
                     </div>
@@ -121,7 +83,9 @@
                         <h5>Our Values</h5>
                         <div class="scrollbar" id="style-3">
                             <div class="force-overflow">
-                                {!! $abouts[0]->value !!}
+                                 @isset($abouts)
+                            {!! $about->values !!}
+                        @endisset
                             </div>
                         </div>
                     </div>
@@ -151,130 +115,41 @@
             </div>
             <div class="divcod55"></div>
             <div class="row insurance-service-all">
-
                 <div class="col-md-12">
                     <div class="insurance-coverage">
                         <div id="insurance-service-content" class="insurance-service-content">
-                            <div class="single-insurance">
-                                <div class="single-insurance-content">
-                                    <span class="service-icons"><img src="images/icons/motorcycle.svg"> </span>
-                                    <h3><a href="insurance_single.html">Motor Insurance</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum ipsa,
-                                        a
-                                        voluptates libero possimus sapiente.</p>
-                                    <div class="read-more">
-                                        <a href="insurance_single.html">Read More</a>
-                                    </div>
+                            @forelse($products as $product)
+                                <div class="single-insurance">
+                                    @if(\App::getLocale() == "en")
+                                        <div class="single-insurance-content">
+                                            <span class="service-icons"><img
+                                                    src="{{ asset("storage/$product->product_image")}}"> </span>
+                                            <h3>
+                                                <a href="{{url('/products')}}">{{$product->product_name}}</a>
+                                            </h3>
+                                            <p>{!! \Illuminate\Support\Str::limit($product->details, 144)!!}</p>
+                                            <div class="read-more">
+                                                <a href="{{url('/products')}}">Read More</a>
+                                            </div>
+                                        </div>
+                                    @else
+                                        <div class="single-insurance-content">
+                                            <span class="service-icons">
+                                                <img
+                                                    src="{{ asset('images/icons/motorcycle.svg') }}"> </span>
+                                            <h3>
+                                                <a href="{{url('/products')}}">{{$product->product_name_nep}}</a>
+                                            </h3>
+                                            <p>{!! \Illuminate\Support\Str::limit($product->details_nep, 144)!!}</p>
+                                            <div class="read-more">
+                                                <a href="{{url('/products')}}">Read More</a>
+                                            </div>
+                                        </div>
+                                    @endif
                                 </div>
-                            </div>
-                            <div class="single-insurance">
-                                <div class="single-insurance-content">
-                                    <span class="service-icons"><img src="images/icons/car.svg"> </span>
-                                    <h3><a href="insurance_single.html">Car Insurance</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum ipsa,
-                                        a
-                                        voluptates libero possimus sapiente.</p>
-                                    <div class="read-more">
-                                        <a href="insurance_single.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-insurance">
-                                <div class="single-insurance-content">
-                                    <span class="service-icons"><img src="images/icons/home.svg"> </span>
-                                    <h3><a href="insurance_single.html">Home Insurance</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum ipsa,
-                                        a
-                                        voluptates libero possimus sapiente.</p>
-                                    <div class="read-more">
-                                        <a href="insurance_single.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-insurance">
-                                <div class="single-insurance-content">
-                                    <span class="service-icons"><img src="images/icons/tourism.svg"> </span>
-                                    <h3><a href="insurance_single.html">Travel Insurance</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum ipsa,
-                                        a
-                                        voluptates libero possimus sapiente.</p>
-                                    <div class="read-more">
-                                        <a href="insurance_single.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-insurance">
-                                <div class="single-insurance-content">
-                                    <span class="service-icons"><img src="images/icons/heart.svg"> </span>
-                                    <h3><a href="insurance_single.html">Health Insurance</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum ipsa,
-                                        a
-                                        voluptates libero possimus sapiente.</p>
-                                    <div class="read-more">
-                                        <a href="insurance_single.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-insurance">
-                                <div class="single-insurance-content">
-                                    <span class="service-icons"><img src="images/icons/fire.svg"> </span>
-                                    <h3><a href="insurance_single.html">Fire Insurance</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum ipsa,
-                                        a
-                                        voluptates libero possimus sapiente.</p>
-                                    <div class="read-more">
-                                        <a href="insurance_single.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-insurance">
-                                <div class="single-insurance-content">
-                                    <span class="service-icons"><img src="images/icons/home.svg"> </span>
-                                    <h3><a href="insurance_single.html">Home Insurance</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum ipsa,
-                                        a
-                                        voluptates libero possimus sapiente.</p>
-                                    <div class="read-more">
-                                        <a href="insurance_single.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-insurance">
-                                <div class="single-insurance-content">
-                                    <span class="service-icons"><img src="images/icons/tourism.svg"> </span>
-                                    <h3><a href="insurance_single.html">Travel Insurance</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum ipsa,
-                                        a
-                                        voluptates libero possimus sapiente.</p>
-                                    <div class="read-more">
-                                        <a href="insurance_single.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-insurance">
-                                <div class="single-insurance-content">
-                                    <span class="service-icons"><img src="images/icons/heart.svg"> </span>
-                                    <h3><a href="insurance_single.html">Health Insurance</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum ipsa,
-                                        a
-                                        voluptates libero possimus sapiente.</p>
-                                    <div class="read-more">
-                                        <a href="insurance_single.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-insurance">
-                                <div class="single-insurance-content">
-                                    <span class="service-icons"><img src="images/icons/fire.svg"> </span>
-                                    <h3><a href="insurance_single.html">Fire Insurance</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laborum ipsa,
-                                        a
-                                        voluptates libero possimus sapiente.</p>
-                                    <div class="read-more">
-                                        <a href="insurance_single.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
+                            @empty
+                            @endforelse
+
                         </div>
                     </div>
                 </div>
@@ -287,7 +162,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="home-call-to-action">
-                        <a class="btn btn-grey" href="#" title="Get A Quote">Get A Quote</a>
+                        <a class="btn btn-grey" href="{{route('quotes.index')}}" title="Get A Quote">Get A Quote</a>
                         <p>United Insurance Co. (Nepal) Limited is an ISO 9001:2000 certified insurance company.The
                             company
                             has started its operation from December 1, 1993 (Mangsir 16, 2050) after its registration

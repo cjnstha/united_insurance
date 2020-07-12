@@ -39,7 +39,7 @@
 					</div>
 					<div class="col-md-4 text-center">
 						<div class="single-team-icons">
-							<img src="{{asset("storage/$details->team_image")}}" alt="">
+							<img src="{{asset('images/team/large/'. $details->team_image)}}" alt="">
 							<br> <br>
 							<a href="#"><i class="teamicon fa fa-facebook"></i></a>
 							<a href="#"><i class="teamicon fa fa-twitter"></i></a>

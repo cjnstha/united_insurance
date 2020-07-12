@@ -21,55 +21,61 @@
             <div class="divcod55"></div>
             <div class="col-md-12">
                 <div class="row">
-{{--                    @isset($bods)--}}
-{{--                    <div class="team-item bod-head col-xs-12 col-sm-6 col-md-3">--}}
-{{--                        <div class="team-item-block">--}}
-{{--                            <div class="team-thumb">--}}
-{{--                                <a href="{{url('/bod-detail',$bods[0]->id)}}"><img src="{{asset($bods[0]->bod_imag)}}" alt="Mahmoud ADel Baghagho"></a>--}}
-{{--                                <div class="team-overlay">--}}
-{{--                                    <p>{{$bods[0]->bod_message}}</p>--}}
-{{--                                    <div class="team-icons">--}}
-{{--                                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>--}}
-{{--                                        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>--}}
-{{--                                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>--}}
-{{--                                        <a target="_blank" href="#"><i class="fa fa-linkedin"></i></a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="info-team">--}}
-{{--                                <h5><a href="{{url('/bod-detail', $bods[0]->id)}}"> {{$bods[0]->bod_name}}</a></h5>--}}
-{{--                                <p class="team-company">{{$bods[0]->bod_position}}</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    @endisset--}}
+                    @foreach($chairman as $order)
+                        @isset($order)
+                            <div class="team-item bod-head col-xs-12 col-sm-6 col-md-3">
+                                <div class="team-item-block">
+                                    <div class="team-thumb">
+                                        <a href="{{url('/bod-detail',$order->id)}}"><img
+                                                src="{{asset('/images/bod/default/'. $order->bod_imag)}}"
+                                                alt="Mahmoud ADel Baghagho"></a>
+                                        <div class="team-overlay">
+                                            <p>{{\Illuminate\Support\Str::limit($order->bod_message, 144)}}</p>
+                                            <div class="team-icons">
+                                                <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+                                                <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+                                                <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
+                                                <a target="_blank" href="#"><i class="fa fa-linkedin"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info-team">
+                                        <h5><a href="{{url('/bod-detail', $order->id)}}"> {{$order->bod_name}}</a></h5>
+                                        <p class="team-company">{{$order->bod_position}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endisset
+                    @endforeach
                 </div>
             </div>
             <div class="divcod30"></div>
             <div class="row">
-            @forelse($bods as $bod)
-                <div class="team-item col-xs-12 col-sm-6 col-md-3">
-                    <div class="team-item-block">
-                        <div class="team-thumb">
-                            <a href="team-detail.blade.php"><img src="{{asset($bod->bod_imag)}}" alt="Mahmoud ADel Baghagho"></a>
-                            <div class="team-overlay">
-                                <p>{{\Illuminate\Support\Str::limit($bod->bod_message, 150)}}</p>
-                                <div class="team-icons">
-                                    <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-linkedin"></i></a>
+                @forelse($bods as $bod)
+                    <div class="team-item col-xs-12 col-sm-6 col-md-3">
+                        <div class="team-item-block">
+                            <div class="team-thumb">
+                                <a href="team-detail.blade.php"><img
+                                        src="{{asset('/images/bod/large/'. $bod->bod_imag)}}"
+                                        alt="Mahmoud ADel Baghagho"></a>
+                                <div class="team-overlay">
+                                    <p>{{\Illuminate\Support\Str::limit($bod->bod_message, 144)}}</p>
+                                    <div class="team-icons">
+                                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
+                                        <a target="_blank" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="info-team">
-                            <h5><a href="{{url('/bod-detail',$bod->id)}}">{{$bod->bod_name}}</a></h5>
-                            <p class="team-company">{{$bod->bod_position}}</p>
+                            <div class="info-team">
+                                <h5><a href="{{url('/bod-detail',$bod->id)}}">{{$bod->bod_name}}</a></h5>
+                                <p class="team-company">{{$bod->bod_position}}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @empty
-            @endforelse
+                @empty
+                @endforelse
             </div>
         </div>
     </section>

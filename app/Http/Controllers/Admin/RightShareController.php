@@ -21,8 +21,17 @@ class RightShareController extends Controller
         if($request->isMethod('post')){
             $data = $request->all();
             $rights = new RightShare;
+             //Upload Doucments//
+             if ($request->hasfile('rightshare_file')) {
+                $image =$request->file('rightshare_file');
+                $ext = $image->getClientOriginalExtension();
+                $destination = 'file/make-claim';
+                $photo_name = md5(time());
+                $photo_original_name = $destination . '/' . $photo_name . '.' . $ext;
+                $image->move($destination, $photo_original_name);
+                $rights->rightshare_file = $photo_original_name;
+            }
             $rights->rightshare_name = $data['rightshare_name'];
-            $rights->rightshare_file = request()->file('rightshare_file')->store('right-share', 'public');
             $rights->status = $data['status'];
             $rights->save();
             return redirect()->route('rightshare.index')->with('flash_message_success','RightShare Form Added Successfully');
@@ -38,8 +47,17 @@ class RightShareController extends Controller
         if($request->isMethod('post')){
             $data = $request->all();
             $rights = RightShare::findOrFail($id);
+             //Upload Doucments//
+             if ($request->hasfile('rightshare_file')) {
+                $image =$request->file('rightshare_file');
+                $ext = $image->getClientOriginalExtension();
+                $destination = 'file/right-share';
+                $photo_name = md5(time());
+                $photo_original_name = $destination . '/' . $photo_name . '.' . $ext;
+                $image->move($destination, $photo_original_name);
+                $rights->rightshare_file = $photo_original_name;
+            }
             $rights->rightshare_name = $data['rightshare_name'];
-            $rights->rightshare_file = request()->file('rightshare_file')->store('right-share', 'public');
             $rights->status = $data['status'];
             $rights->update();
             return redirect()->route('rightshare.index')->with('flash_message_success','Right Share Form Updated Successfully');

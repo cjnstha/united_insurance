@@ -9,8 +9,9 @@ use Illuminate\Http\Request;
 class BODController extends Controller
 {
     public function index(){
-        $bods = BOD::all();
-        return view('frontend.pages.bod',compact('bods'));
+        $chairman = BOD::where('hierarchy','1')->get();
+        $bods = BOD::where('hierarchy', '!=', '1')->orderBy('hierarchy','asc')->get();
+        return view('frontend.pages.bod',compact('bods','chairman'));
     }
 
     public function detail($id){

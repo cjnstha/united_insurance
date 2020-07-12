@@ -52,6 +52,7 @@
                                         <td class="inline-flex">
                                             <a href="{{route('bod.edit', $bod->id)}}" class="btn btn-warning"><i
                                                     class="fas fa-edit"></i> Edit </a> &nbsp; &nbsp;
+
                                             <a href="{{route('bod.destroy', $bod->id)}}" class="btn btn-danger"><i
                                                     class="fas fa-trash-alt"></i> Delete </a>
                                         </td>

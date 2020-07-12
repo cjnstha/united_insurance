@@ -66,6 +66,13 @@
                                         <input type="text" class="form-control" name="experience"
                                                placeholder="Enter Experience" required>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Hierarchial Order</label>
+                                        <input type="number" class="form-control" name="hierarchy"
+                                               placeholder="Enter Order Format" required>
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Description</label>
                                         <textarea class="form-control" id="summary-ckeditor3"

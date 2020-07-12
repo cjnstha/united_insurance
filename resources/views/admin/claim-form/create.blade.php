@@ -32,9 +32,22 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form role="form" action="{{ route('claim.store') }}" method="POST" enctype="multipart/form-data">
+                            <form role="form" action="{{ route('claim.store') }}" method="POST"
+                                  enctype="multipart/form-data">
                                 @csrf
+                                {{--                                <input type="hidden" name="product_id" value="{{ $products->id }}">--}}
+
+
                                 <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Status</label>
+                                        <select class="custom-select form-control" name="product_id">
+                                            <option value="--Select Here--">--Select Here--</option>
+                                            @foreach($products as $product)
+                                                <option value="{{$product->id}}">{{$product->product_name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                     <div class="form-group">
                                         <label for="">Name*</label>
                                         <input type="text" class="form-control" id="" name="claim_name"

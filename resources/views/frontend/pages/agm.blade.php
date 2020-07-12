@@ -20,9 +20,10 @@
                                         class="fa fa-angle-right"></i></a></li>
                             <li><a href="{{url('/right-share')}}">Right Share <i class="fa fa-angle-right"></i></a></li>
                             <li><a href="{{url('/claim-form')}}">Claim Form <i class="fa fa-angle-right"></i></a></li>
-                            <li><a href="{{url('/surveyor-listing-application-form')}}">Surveyor Listing Application Form <i
+                            <li><a href="{{url('/surveyor-listing-application-form')}}">Surveyor Listing Application
+                                    Form <i
                                         class="fa fa-angle-right"></i></a></li>
-{{--                         <li><a href="branch-download.html">Branch Download <i class="fa fa-angle-right"></i></a></li>--}}
+                            {{--                         <li><a href="branch-download.html">Branch Download <i class="fa fa-angle-right"></i></a></li>--}}
                         </ul>
                     </div>
                 </div>
@@ -39,21 +40,24 @@
                             </thead>
                             <tbody>
                             @forelse($agms as $agm)
-                            <tr>
-                                <td data-label="Name" title="F.Y. 2076/2077 1st Quarter">{{$agm->agm_name}}</td>
-                                <td data-label="Date Added">{{$agm->updated_at->toFormattedDateString()}}</td>
-                                <td data-label="View File">
-                                    <a class='btn btnViewFile' data-target="{{asset("/storage/$agm->file_name")}}" data-title="{{$agm->agm_files}}"
-                                       data-modal="downloadModal" title="View File"><i class='fa fa-eye'></i> View</a>
-                                </td>
-                                <td data-label="Download File">
-                                    <a href="../public/storage/{{$agm->agm_files}}" title="Download Attachment" class='btn btnViewFile' download
-                                       target='_blank'><span><i class="fa fa-file-pdf-o" aria-hidden="true"></i></span>
-                                        Download <i class="fa fa-download" aria-hidden="true"></i></a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td data-label="Name" title="F.Y. 2076/2077 1st Quarter">{{$agm->agm_name}}</td>
+                                    <td data-label="Date Added">{{$agm->updated_at->toFormattedDateString()}}</td>
+                                    <td data-label="View File">
+                                        <a target="_blank" href="{{asset($agm->agm_files)}}" class="pdf_download transition3s">
+                                            View
+                                        </a>
+                                    </td>
+                                    <td data-label="Download File">
+                                        <a href="{{asset($agm->agm_files)}}" title="Download Attachment"
+                                           class='btn btnViewFile' download
+                                           target='_blank'><span><i class="fa fa-file-pdf-o"
+                                                                    aria-hidden="true"></i></span>
+                                            Download <i class="fa fa-download" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
                             @empty
-                            <p>No Records Found</p>
+                                <p>No Records Found</p>
                             @endforelse
                             </tbody>
                         </table>

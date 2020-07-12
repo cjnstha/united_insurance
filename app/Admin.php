@@ -9,7 +9,15 @@ use Illuminate\Database\Eloquent\Model;
 class Admin extends Authenticatable
 {
     use Notifiable;
-    protected $guard = 'admin';
-    protected $fillable = ['name' , 'password'];
-    protected $hidden = ['password','remember_token'];
+
+    protected $guard = 'admins';
+    protected $fillable = ['name', 'email', 'password', 'type', 'status'];
+    protected $hidden = ['password', 'remember_token'];
+
+    public function roles()
+    {
+        return $this->belongsToMany('App\Role');
+    }
+
+
 }

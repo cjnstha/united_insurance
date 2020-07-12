@@ -21,8 +21,17 @@ class SurveyorListingController extends Controller
         if($request->isMethod('post')){
             $data = $request->all();
             $surveyors = new SurveyorListing;
+             //Upload Doucments//
+             if ($request->hasfile('surveyor_files')) {
+                $image =$request->file('surveyor_files');
+                $ext = $image->getClientOriginalExtension();
+                $destination = 'file/policy-proposal';
+                $photo_name = md5(time());
+                $photo_original_name = $destination . '/' . $photo_name . '.' . $ext;
+                $image->move($destination, $photo_original_name);
+                $surveyors->surveyor_files = $photo_original_name;
+            }
             $surveyors->surveyor_name = $data['surveyor_name'];
-            $surveyors->surveyor_files = request()->file('surveyor_files')->store('surveyor-form', 'public');
             $surveyors->status = $data['status'];
             $surveyors->save();
             return redirect()->route('surveyor-application.index')->with('flash_message_success','Surveyor Application Form Added Successfully');
@@ -38,8 +47,17 @@ class SurveyorListingController extends Controller
         if($request->isMethod('post')){
             $data = $request->all();
             $surveyors = SurveyorListing::findOrFail($id);
+             //Upload Doucments//
+             if ($request->hasfile('surveyor_files')) {
+                $image =$request->file('surveyor_files');
+                $ext = $image->getClientOriginalExtension();
+                $destination = 'file/surveyors-form';
+                $photo_name = md5(time());
+                $photo_original_name = $destination . '/' . $photo_name . '.' . $ext;
+                $image->move($destination, $photo_original_name);
+                $surveyors->surveyor_files = $photo_original_name;
+            }
             $surveyors->surveyor_name = $data['surveyor_name'];
-            $surveyors->surveyor_files = request()->file('surveyor_files')->store('surveyor-form', 'public');
             $surveyors->status = $data['status'];
             $surveyors->update();
             return redirect()->route('surveyor-application.index')->with('flash_message_success','Surveyor Application Form Updated Successfully');

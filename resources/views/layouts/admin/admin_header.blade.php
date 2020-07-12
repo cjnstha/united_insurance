@@ -12,7 +12,7 @@
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link btn btn-outline-primary"  href="{{ url('admin/logout') }}">
+          <a class="nav-link btn btn-outline-primary"  href="{{ url('/admin/logout') }}">
             Logout
           </a>
         </li>

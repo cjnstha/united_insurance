@@ -8,7 +8,7 @@ use App\Role;
 
 class RolesController extends Controller
 {
-    public function viewRole(){
+    public function index(){
         $roles = Role::all();
         return view('admin.roles.index',compact('roles'));
     }

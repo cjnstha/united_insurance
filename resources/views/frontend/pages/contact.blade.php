@@ -13,7 +13,7 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="Contact-Form">
-                            <form class="leave-comment contact-form" autocomplete="off" id="contact-form" name="contact-form" method="post" action="{{url('/page/contact')}}">
+                            <form class="leave-comment contact-form" autocomplete="off"  name="contact-form" method="post" action="{{url('/contact')}}">
                                 @csrf
                                 <fieldset>
                                     <div id="formstatus"></div>

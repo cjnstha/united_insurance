@@ -44,14 +44,13 @@
                                         title="Surveyor Application Form">{{$surveyor->surveyor_name}}</td>
                                     <td data-label="Date Added">{{$surveyor->updated_at->toFormattedDateString()}}</td>
                                     <td data-label="View File">
-                                        <a class='btn btnViewFile'
-                                           data-target="{{asset("storage/$surveyor->surveyor_files")}}"
-                                           data-title="{{$surveyor->surveyor_name}}"
-                                           data-modal="downloadModal" title="View File"><i class='fa fa-eye'></i>
-                                            View</a>
+                                        <a href="{{asset($surveyor->surveyor_files)}}"
+                                           class="pdf_download transition3s">
+                                            View
+                                        </a>
                                     </td>
                                     <td data-label="Download File">
-                                        <a href="../public/storage/{{$surveyor->surveyor_files}}"
+                                        <a href="{{asset($surveyor->surveyor_files)}}"
                                            title="Download Attachment" class='btn btnViewFile' download
                                            target='_blank'><span><i class="fa fa-file-pdf-o"
                                                                     aria-hidden="true"></i></span>

@@ -46,14 +46,12 @@
                                     </td>
                                     <td data-label="Date Added">{{$right->updated_at->toFormattedDateString()}}</td>
                                     <td data-label="View File">
-                                        <a class='btn btnViewFile'
-                                           data-target="{{asset("storage/$right->rightshare_file")}}"
-                                           data-title="{{$right->rightshare_name}}"
-                                           data-modal="downloadModal" title="View File"><i class='fa fa-eye'></i>
-                                            View</a>
+                                        <a href="{{asset($right->rightshare_file)}}" class="pdf_download transition3s">
+                                            View
+                                        </a>
                                     </td>
                                     <td data-label="Download File">
-                                        <a href="../public/storage/{{$right->rightshare_file}}"
+                                        <a href="{{asset($right->rightshare_file)}}"
                                            title="Download Attachment" class='btn btnViewFile' download
                                            target='_blank'><span><i class="fa fa-file-pdf-o"
                                                                     aria-hidden="true"></i></span>

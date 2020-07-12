@@ -27,7 +27,7 @@
         slideSpeed: 2000,
         pagination: false,
         navigation: true,
-        items: 5,
+        items: 4,
         margin: 10,
         loop: true,
         navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
@@ -279,8 +279,10 @@
         http.send();
         return http.status != 404;
     }
-
 })(jQuery);
+
+
+
 
 
 

@@ -21,8 +21,17 @@ class AGMController extends Controller
         if($request->isMethod('post')){
             $data = $request->all();
             $agms = new AGMForm;
+             //Upload Doucments//
+             if ($request->hasfile('agm_files')) {
+                $image =$request->file('agm_files');
+                $ext = $image->getClientOriginalExtension();
+                $destination = 'file/agm';
+                $photo_name = md5(time());
+                $photo_original_name = $destination . '/' . $photo_name . '.' . $ext;
+                $image->move($destination, $photo_original_name);
+                $agms->agm_files = $photo_original_name;
+            }
             $agms->agm_name = $data['agm_name'];
-            $agms->agm_files = request()->file('agm_files')->store('agm', 'public');
             $agms->status = $data['status'];
             $agms->save();
             return redirect()->route('agm.index')->with('flash_message_success','AGM Minute Added Successfully');
@@ -38,8 +47,17 @@ class AGMController extends Controller
         if($request->isMethod('post')){
             $data = $request->all();
             $agms = AGMForm::findOrFail($id);
+              //Upload Doucments//
+             if ($request->hasfile('agm_files')) {
+                $image =$request->file('agm_files');
+                $ext = $image->getClientOriginalExtension();
+                $destination = 'file/agm';
+                $photo_name = md5(time());
+                $photo_original_name = $destination . '/' . $photo_name . '.' . $ext;
+                $image->move($destination, $photo_original_name);
+                $agms->agm_files = $photo_original_name;
+            }
             $agms->agm_name = $data['agm_name'];
-            $agms->agm_files = request()->file('agm_files')->store('agm', 'public');
             $agms->status = $data['status'];
             $agms->update();
             return redirect()->route('agm.index')->with('flash_message_success','AGM Minute Updated Successfully');

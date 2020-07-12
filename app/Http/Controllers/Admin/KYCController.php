@@ -21,8 +21,17 @@ class KYCController extends Controller
         if($request->isMethod('post')){
             $data = $request->all();
             $kycs = new KYC;
+            //Upload Doucments//
+             if ($request->hasfile('kyc_file')) {
+                $image =$request->file('kyc_file');
+                $ext = $image->getClientOriginalExtension();
+                $destination = 'file/kyc';
+                $photo_name = md5(time());
+                $photo_original_name = $destination . '/' . $photo_name . '.' . $ext;
+                $image->move($destination, $photo_original_name);
+                $kycs->kyc_file = $photo_original_name;
+            }
             $kycs->kyc_name = $data['kyc_name'];
-            $kycs->kyc_file = request()->file('kyc_file')->store('kyc', 'public');
             $kycs->status = $data['status'];
             $kycs->save();
             return redirect()->route('kyc.index')->with('flash_message_success','KYC Form Added Successfully');
@@ -38,8 +47,17 @@ class KYCController extends Controller
         if($request->isMethod('post')){
             $data = $request->all();
             $kycs = KYC::findOrFail($id);
+            //Upload Doucments//
+             if ($request->hasfile('kyc_file')) {
+                $image =$request->file('kyc_file');
+                $ext = $image->getClientOriginalExtension();
+                $destination = 'file/kyc';
+                $photo_name = md5(time());
+                $photo_original_name = $destination . '/' . $photo_name . '.' . $ext;
+                $image->move($destination, $photo_original_name);
+                $kycs->kyc_file = $photo_original_name;
+            }
             $kycs->kyc_name = $data['kyc_name'];
-            $kycs->kyc_file = request()->file('kyc_file')->store('kyc', 'public');
             $kycs->status = $data['status'];
             $kycs->update();
             return redirect()->route('kyc.index')->with('flash_message_success','AGM Minute Updated Successfully');

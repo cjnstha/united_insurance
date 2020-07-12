@@ -9,8 +9,9 @@ use Illuminate\Http\Request;
 class TeamMemberController extends Controller
 {
     public function index(){
-        $teams = TeamMember::all();
-        return view('frontend.pages.team-members',compact('teams'));
+         $orders = TeamMember::where('hierarchy','1')->get();
+        $teams = TeamMember::where('hierarchy','!=','1')->orderBy('hierarchy','asc')->get();
+        return view('frontend.pages.team-members',compact('teams','orders'));
     }
 
     public function detail($id){

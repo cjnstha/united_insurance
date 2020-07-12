@@ -49,8 +49,8 @@
                                         <label for="exampleInputEmail1">Status</label>
                                         <select class="custom-select form-control" name="status">
                                             <option value="--Select Here--">--Select Here--</option>
-                                            <option value="1">Active</option>
-                                            <option value="0">Inactive</option>
+                                            <option value="1"{{$policies->status==1 ? 'selected':''}}>Active</option>
+                                            <option value="0"{{$policies->status==0 ? 'selected':''}}>Inactive</option>
                                         </select>
                                     </div>
                                 </div>

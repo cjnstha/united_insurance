@@ -1,6 +1,6 @@
 @extends('layouts.frontend.master')
 @section('title')
-   Claim Form
+    Claim Form
 @endsection
 @section('contents')
     <!-- ============================ financial-statements ================================= -->
@@ -18,7 +18,8 @@
                             <li><a href="{{url('/policy-proposal-form')}}">Policy Proposal Form <i
                                         class="fa fa-angle-right"></i></a></li>
                             <li><a href="{{url('/right-share')}}">Right Share <i class="fa fa-angle-right"></i></a></li>
-                            <li class="active"><a href="{{url('/claim-form')}}">Claim Form <i class="fa fa-angle-right"></i></a></li>
+                            <li class="active"><a href="{{url('/claim-form')}}">Claim Form <i
+                                        class="fa fa-angle-right"></i></a></li>
                             <li><a href="{{url('/surveyor-listing-application-form')}}">Surveyor Listing
                                     Application Form <i
                                         class="fa fa-angle-right"></i></a></li>
@@ -27,45 +28,77 @@
                     </div>
                 </div>
                 <div class="download__container col-lg-8 col-md-8 col-sm-6 col-xs-12 pull-right key_benefits">
-                    <div class="download__container__table" data-url="agent-form-details">
-                        <table class="table table-sm">
-                            <thead class="thead-light">
-                            <tr>
-                                <th>Name</th>
-                                <th>Date Added</th>
-                                <th>View File</th>
-                                <th>Download File</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @forelse($claims as $claim)
-                                <tr>
-                                    <td data-label="Name"
-                                        title="Surveyor Application Form">{{$claim->claim_name}}</td>
-                                    <td data-label="Date Added">{{$claim->updated_at->toFormattedDateString()}}</td>
-                                    <td data-label="View File">
-                                        <a class='btn btnViewFile'
-                                           data-target="{{asset("storage/$claim->claim_files")}}"
-                                           data-title="{{$claim->surveyor_name}}"
-                                           data-modal="downloadModal" title="View File"><i class='fa fa-eye'></i>
-                                            View</a>
-                                    </td>
-                                    <td data-label="Download File">
-                                        <a href="../public/storage/{{$claim->claim_files}}"
-                                           title="Download Attachment" class='btn btnViewFile' download
-                                           target='_blank'><span><i class="fa fa-file-pdf-o"
-                                                                    aria-hidden="true"></i></span>
-                                            Download <i class="fa fa-download" aria-hidden="true"></i></a>
-                                    </td>
-                                </tr>
-                            @empty
-                                <p>No Records Found</p>
-                            @endforelse
-                            </tbody>
-                        </table>
-                        <div class="more-download">
-                        </div>
+                    <!-- FAQ -->
+                    <div class="parent-container">
+                        <ul class="form-plus-sub">
+                            @foreach($products as $product)
+                                <li>
+                                    <h3 class="closed-form">{{$product->product_name}}
+                                        <div class="plus-minus-toggle collapsed"></div>
+                                    </h3>
+                                    <div class="open-form">
+                                        <div class="download__container__table" data-url="agent-form-details">
+                                            <table class="table table-sm">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Date Added</th>
+                                                    <th>View File</th>
+                                                    <th>Download File</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td data-label="Name" title="Surveyor Application Form">
+                                                        {{$product->claim_form}}
+                                                    </td>
+                                                    <td data-label="Date Added">{{$product->updated_at->toFormattedDateString()}}</td>
+                                                    <td data-label="View File">
+                                                        <a href="{{asset($product->file_pdf)}}" target='_blank'
+                                                           class="pdf_download transition3s">
+                                                            View
+                                                        </a>
+                                                    </td>
+                                                    <td data-label="Download File">
+                                                        <a href="{{asset($product->file_pdf)}}"
+                                                           title="Download Attachment" class='btn btnViewFile' download
+                                                           target='_blank'><span><i class="fa fa-file-pdf-o"
+                                                                                    aria-hidden="true"></i></span>
+                                                            Download <i class="fa fa-download"
+                                                                        aria-hidden="true"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-label="Name" title="Surveyor Application Form">
+                                                        {{$product->proposal_form}}
+                                                    </td>
+                                                    <td data-label="Date Added">{{$product->updated_at->toFormattedDateString()}}</td>
+                                                    <td data-label="View File">
+                                                        <a href="{{asset($product->file_doc)}}" target='_blank'
+                                                           class="pdf_download transition3s">
+                                                            View
+                                                        </a>
+                                                    </td>
+                                                    <td data-label="Download File">
+                                                        <a href="{{asset($product->file_doc)}}"
+                                                           title="Download Attachment" class='btn btnViewFile' download
+                                                           target='_blank'><span><i class="fa fa-file-pdf-o"
+                                                                                    aria-hidden="true"></i></span>
+                                                            Download <i class="fa fa-download"
+                                                                        aria-hidden="true"></i></a>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="more-download">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
+
                 </div>
             </div>
         </div> <!-- End container -->
@@ -76,4 +109,13 @@
 @endsection
 @section('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js" defer></script>
+
+    <script>
+        // Toggle Collapse
+        $('.form-plus-sub li .closed-form').click(function () {
+            $(this).find('.plus-minus-toggle').toggleClass('collapsed');
+            $(this).parent().toggleClass('active');
+        });
+    </script>
+
 @endsection

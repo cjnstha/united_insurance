@@ -45,8 +45,8 @@
                   <td> {!!  $faw->details !!} </td>
                   <td> {!! $faw->details_nep !!} </td>
                   <td class="d-inline-flex">
-                      <a href="{{route('about.edit', $faw->id)}}" class="btn btn-warning"><i class="fas fa-edit"></i> </a> &nbsp;
-                      <a href="{{route('about.delete', $faw->id)}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                      <a href="{{route('faqs.edit', $faw->id)}}" class="btn btn-warning"><i class="fas fa-edit"></i> </a> &nbsp;
+                      <a href="{{route('faqs.destroy', $faw->id)}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                   </td>
                 </tr>
                     @empty

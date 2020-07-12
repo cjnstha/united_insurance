@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -23,6 +23,14 @@ Route::prefix('/admin')->namespace('Admin')->group(function () {
     Route::match(['get', 'post'], '/', 'AdminController@login');
     Route::group(['middleware' => ['admin']], function () {
         Route::get('dashboard', 'AdminController@dashboard');
+
+        //Admin Roles and Permission and Add Admin Routes//
+        Route::get('settings', 'AdminController@settings')->name('update.password');
+
+        //Change Password Route//
+        Route::post('check-current-pwd', 'AdminController@chkCurrentPassword');
+        Route::post('update-pwd', 'AdminController@updateCurrentPassword');
+        Route::get('/logout', 'AdminController@logout');
 
         //AboutUs Routes//
         Route::get('about-us', 'AboutUsController@index')->name('about.index');
@@ -193,22 +201,82 @@ Route::prefix('/admin')->namespace('Admin')->group(function () {
         Route::get('surveyor-application/edit/{id}', 'SurveyorListingController@edit')->name('surveyor-application.edit');
         Route::post('surveyor-application/update/{id}', 'SurveyorListingController@update')->name('surveyor-application.update');
         Route::get('surveyor-application/destroy/{id}', 'SurveyorListingController@destroy')->name('surveyor-application.destroy');
-    });
 
+        //Products Detail Controller//
+
+        Route::get('products-list', 'ProductsController@index')->name('products.index');
+        Route::get('products-list/create', 'ProductsController@create')->name('products.create');
+        Route::post('products-list/store', 'ProductsController@store')->name('products.store');
+        Route::get('products-list/edit/{id}', 'ProductsController@edit')->name('products.edit');
+        Route::post('products-list/update/{id}', 'ProductsController@update')->name('products.update');
+        Route::get('products-list/delete/{id}', 'ProductsController@destroy')->name('products.destroy');
+
+        //News and Notices Routes//
+        Route::get('news', 'NewsController@index')->name('news.index');
+        Route::match(['get', 'post'], 'news/store', 'NewsController@store')->name('news.store');
+        Route::get('news/edit/{id}', 'NewsController@edit')->name('news.edit');
+        Route::post('news/update/{id}', 'NewsController@update')->name('news.update');
+        Route::get('news/delete/{id}', 'NewsController@destroy')->name('news.destroy');
+
+        //Quotes Routes//
+        Route::get('quotes', 'QuotesController@index')->name('quote.index');
+
+        //Make Claim Route//
+        Route::get('make-claim', 'MakeClaimController@index')->name('makeClaim.index');
+
+        //Conatct Us  Route//
+        Route::get('contact-us', 'ContactController@contact')->name('contacts.contact');
+
+        //Pop-up Controller//
+        Route::get('pop-up', 'PopUpController@index')->name('popups.index');
+        Route::get('pop-up/create', 'PopUpController@create')->name('popups.create');
+        Route::post('pop-up/create', 'PopUpController@store')->name('popups.store');
+        Route::get('pop-up/edit/{id}', 'PopUpController@edit')->name('popups.edit');
+        Route::post('pop-up/update/{id}', 'PopUpController@update')->name('popups.update');
+        Route::get('pop-up/delete/{id}', 'PopUpController@destroy')->name('popups.destroy');
+
+
+        //Gallery Routes//
+        Route::get('galleries','GalleryController@index')->name('galleries.index');
+        Route::get('galleries-create','GalleryController@create')->name('galleries.create');
+        Route::post('galleries-create','GalleryController@store')->name('galleries.store');
+        Route::get('galleries-edit/{id}','GalleryController@edit')->name('galleries.edit');
+        Route::get('galleries-update/{id}','GalleryController@update')->name('galleries.update');
+        Route::get('galleries-delete/{id}','GalleryController@destroy')->name('galleries.destroy');
+
+        //User Management Routes//
+        Route::get('user-list', 'AdminController@userMgmt')->name('users.index');
+        Route::get('user-create', 'AdminController@create')->name('users.create');
+        Route::post('user-create', 'AdminController@addUsers')->name('users.store');
+        Route::get('update-admin-details/{id}', 'AdminController@editUsers')->name('users.edit');
+        Route::post('update-admin-details/{id}', 'AdminController@updateAdminDetails')->name('update.details');
+        Route::get('update-admin-delete/{id}', 'AdminController@destroy')->name('update.destroy');
+
+        //Roles Routes//
+        Route::get('view-roles', 'RolesController@index')->name('roles.index');
+        Route::match(['get', 'post'], 'add-role', 'RolesController@addRoles')->name('roles.add');
+
+        //Information Routes//
+//        Route::get('information', 'SettingsController@index')->name('infos.index');
+        Route::match(['get', 'post'], 'add-information', 'SettingsController@addInfos')->name('infos.create');
+        Route::get('add-information/destroy/{id}', 'SettingsController@destroy')->name('infos.destroy');
+
+
+    });
 
 });
 
 Route::prefix('/')->namespace('Frontend')->group(function () {
 //    Route::redirect('/','/en');
 
-    Route::get('/', 'HomeController@index')->name('home.index');
+    Route::get('/', 'HomeController@index')->name('homes');
 
     //About Us Routes//
-    Route::get('/about-us', 'AboutUsController@index');
+    Route::get('/about-us', 'AboutUsController@index')->name('abouts');
 
     //BOD Routes//
     Route::get('/board-of-directors', 'BODController@index');
-    Route::get('/bod-detail/{id}','BODController@detail');
+    Route::get('/bod-detail/{id}', 'BODController@detail');
 
     //Team Members Routes//
     Route::get('/team-member', 'TeamMemberController@index');
@@ -276,8 +344,63 @@ Route::prefix('/')->namespace('Frontend')->group(function () {
 
 
     //Contact Us Routes//
-    Route::match(['get','post'],'page/contact','ContactUsController@contact');
+    Route::match(['get', 'post'], '/contact', 'ContactUsController@contact')->name('contacts');
+
+    //Make Claim Routes//
+    Route::match(['get', 'post'], '/make-claim', 'MakeClaimsController@index')->name('makeClaims.index');
+
+
+    Route::get('/products', 'ProductController@index')->name('products');
+    Route::get('/products@{id}', 'ProductController@index');
+
+    Route::get('/news', 'NewsController@index')->name('news');
+    Route::get('/news-detail/{id}', 'NewsController@detail');
+
+    //Get A Quotes Routes//
+    Route::match(['get', 'post'], '/get-a-quote', 'QuotesController@index')->name('quotes.index');
+
+    //Gallery Routes//
+    Route::get('/gallery', 'GalleryController@index')->name('gallery.index');
+
+    //Buy Policy Routes//
+    Route::get('/buy-renew','BuyInsuranceController@index');
+    Route::post('/claim-renew/store','BuyInsuranceController@property');
+    Route::post('/claim-renew/policy','BuyInsuranceController@policy');
+    Route::match(['get','post'],'/claim-renew/corona','BuyInsuranceController@corona');
+    Route::match(['get','post'], '/claim-renew/coronaPolicy','BuyInsuranceController@policyCorona');
+    Route::match(['get','post'],'/claim-renew/travel','BuyInsuranceController@travel');
+    Route::match(['get','post'],'/claim-renew/travel-policy','BuyInsuranceController@travelPolicy');
+    Route::match(['get','post'],'/claim-renew/thirdParty','BuyInsuranceController@thirdParty');
+    Route::match(['get','post'],'/claim-renew/thirdPolicy','BuyInsuranceController@thirdPolicy');
+
+
+    Route::get('/calculator-motorcycle', function () {
+        return view('frontend.pages.calculatemotorcycle');
+    });
+
+    Route::get('/calculator-goods', function () {
+        return view('frontend.pages.calculategoods');
+    });
+
+    Route::get('/calculator-passenger', function () {
+        return view('frontend.pages.calculatepassenger');
+    });
+
+    Route::get('/calculator-travel', function () {
+        return view('frontend.pages.calculatetravel');
+    });
+
+    Route::get('/calculator-taxi', function () {
+        return view('frontend.pages.calculatetaxi');
+    });
+
+    Route::get('/calculator-vechile', function () {
+        return view('frontend.pages.calculatevehicle');
+    });
+
 });
+
+
 
 Route::get('locale/{locale}', function ($locale) {
 

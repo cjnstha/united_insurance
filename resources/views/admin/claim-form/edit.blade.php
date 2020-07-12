@@ -35,9 +35,20 @@
                             <form role="form" action="{{ route('claim.update',$claims->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Product Name</label>
+                                        <select class="custom-select form-control" name="product_id">
+                                            <option value="--Select Here--">--Select Here--</option>
+                                            @foreach($products as $product)
+                                                <option value="{{$product->id}}" {{$claims->product_id == $product->id ? 'selected':''}}> {{$product->product_name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="">Name*</label>
-                                        <input type="text" class="form-control" id="" name="claim_name" value="{{$claim->claim_name}}"
+                                        <input type="text" class="form-control" id="" name="claim_name" value="{{$claims->claim_name}}"
                                                placeholder="Enter Name" required>
                                     </div>
                                     <div class="form-group">
@@ -49,8 +60,8 @@
                                         <label for="exampleInputEmail1">Status</label>
                                         <select class="custom-select form-control" name="status">
                                             <option value="--Select Here--">--Select Here--</option>
-                                            <option value="1">Active</option>
-                                            <option value="0">Inactive</option>
+                                            <option value="1"{{$claims->status ==1 ? 'selected':''}}>Active</option>
+                                            <option value="0"{{$claims->status ==0 ? 'selected':''}}>Inactive</option>
                                         </select>
                                     </div>
                                 </div>

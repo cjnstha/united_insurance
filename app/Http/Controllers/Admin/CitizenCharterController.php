@@ -8,17 +8,20 @@ use Illuminate\Http\Request;
 
 class CitizenCharterController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $citizens = CitizenCharter::all();
-        return view('admin.citizen-charter.index',compact('citizens'));
+        return view('admin.citizen-charter.index', compact('citizens'));
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.citizen-charter.create');
     }
 
-    public function store(Request $request){
-        if($request->isMethod('post')){
+    public function store(Request $request)
+    {
+        if ($request->isMethod('post')) {
             $data = $request->all();
 
             $citizens = new CitizenCharter;
@@ -28,14 +31,16 @@ class CitizenCharterController extends Controller
             $citizens->details = $data['details'];
             $citizens->details_nep = $data['details_nep'];
             $citizens->status = $data['status'];
+            $citizens->hierarchy = $data['hierarchy'];
             $citizens->save();
-            return redirect()->route('citizens.index')->with('flash_message_success','Citien Charter added successfully');
+            return redirect()->route('citizens.index')->with('flash_message_success', 'Citien Charter added successfully');
         }
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $citizens = CitizenCharter::findOrFail($id);
-        return view('admin.citizen-charter.edit',compact('citizens'));
+        return view('admin.citizen-charter.edit', compact('citizens'));
     }
 
     public function update(Request $request, $id)
@@ -50,6 +55,7 @@ class CitizenCharterController extends Controller
             $citizens->details = $data['details'];
             $citizens->details_nep = $data['details_nep'];
             $citizens->status = $data['status'];
+            $citizens->hierarchy = $data['hierarchy'];
             $citizens->update();
             return redirect()->route('citizens.index')->with('flash_message_success', 'Citizen Charter updated successfully');
         }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class AdminsTableSeeder extends Seeder
 {
@@ -13,7 +14,7 @@ class AdminsTableSeeder extends Seeder
     {
         DB::table('admins')->delete();
         $adminRecords = [
-            ['id' => 1, 'name' => 'Admin', 'type' => 'admin', 'mobile' => '9860490637', 'email' => 'admin@admin.com', 'password' => '$2y$10$5W/Y/V7931GsMRhsQuYEVu53pNKVtpQa19jvE6a4YOJx.qjVZyg2y', 'image' => '', 'status' => 1],
+            ['id' => 1, 'name' => 'Admin', 'type' => 'admin', 'mobile' => '9860490637', 'email' => 'united@admin.com', 'password' => Hash::make('Password'), 'image' => '', 'status' => 1],
         ];
 
 //        foreach ($adminRecords as $key=>$record){

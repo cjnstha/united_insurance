@@ -71,21 +71,26 @@
                                         <textarea name="bod_message" class="form-control" required></textarea>
                                     </div>
                                     <div class="form-group">
+                                        <label for="exampleInputEmail1">Hierarchial Order</label>
+                                        <input type="number" class="form-control" name="hierarchy" placeholder="Enter Order Format"
+                                               required>
+                                    </div>
+                                    <div class="form-group">
                                         <h3>Nepali Format</h3>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">BOD Name Nepali</label>
-                                        <input type="text" class="form-control" name="bod_name_np"
+                                        <input type="text" class="form-control" name="bod_name_nep"
                                                placeholder="Enter BOD Name in Nepali" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Position Nepali</label>
-                                        <input type="text" class="form-control" name="bod_position_np"
+                                        <input type="text" class="form-control" name="bod_position_nep"
                                                placeholder="Enter Position" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Message Nepali</label>
-                                        <textarea name="bod_message_np" class="form-control" required></textarea>
+                                        <textarea name="bod_message_nep" class="form-control" required></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Status</label>

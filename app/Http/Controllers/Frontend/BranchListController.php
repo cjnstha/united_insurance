@@ -10,6 +10,6 @@ class BranchListController extends Controller
 {
     public function index(){
         $branches = BranchList::all();
-        return view('frontend.branch-list.index',compact('branches'));
+        return view('frontend.pages.branch-list',compact('branches'));
     }
 }

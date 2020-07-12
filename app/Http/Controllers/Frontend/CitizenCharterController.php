@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CitizenCharterController extends Controller
 {
     public function index(){
-        $citizens = CitizenCharter::all();
+        $citizens = CitizenCharter::orderBy('hierarchy', 'asc')->get();
         return view('frontend.pages.citizen-charters',compact('citizens'));
     }
 }

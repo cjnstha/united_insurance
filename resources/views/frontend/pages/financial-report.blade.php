@@ -26,12 +26,12 @@
                                     <td data-label="Date Added">{{$financial->updated_at->toFormattedDateString()}}</td>
                                     <td data-label="View File">
                                         <a class='btn btnViewFile'
-                                           data-target="{{asset("/storage/$financial->file_name")}}"
+                                           data-target="{{asset($financial->file_name)}}"
                                            data-title="{{$financial->name}}" data-modal="downloadModal" title="View File"><i
                                                 class='fa fa-eye'></i> View</a>
                                     </td>
                                     <td data-label="Download File">
-                                        <a href="../public/storage/{{$financial->file_name}}" title="Download Attachment"
+                                        <a href="{{asset($financial->file_name)}}" title="Download Attachment"
                                            class='btn btnViewFile' download target='_blank'><span><i
                                                     class="fa fa-file-pdf-o" aria-hidden="true"></i></span> Download <i
                                                 class="fa fa-download" aria-hidden="true"></i></a>
