@@ -254,11 +254,11 @@ Route::prefix('/admin')->namespace('Admin')->group(function () {
 
         //User Management Routes//
         Route::get('user-list', 'AdminController@userMgmt')->name('users.index');
-        Route::get('user-create', 'AdminController@create')->name('users.create');
-        Route::post('user-create', 'AdminController@addUsers')->name('users.store');
-        Route::get('update-admin-details/{id}', 'AdminController@editUsers')->name('users.edit');
-        Route::post('update-admin-details/{id}', 'AdminController@updateAdminDetails')->name('update.details');
-        Route::get('update-admin-delete/{id}', 'AdminController@destroy')->name('update.destroy');
+//        Route::get('user-create', 'AdminController@create')->name('users.create');
+//        Route::post('user-create', 'AdminController@addUsers')->name('users.store');
+//        Route::get('update-admin-details/{id}', 'AdminController@editUsers')->name('users.edit');
+//        Route::post('update-admin-details/{id}', 'AdminController@updateAdminDetails')->name('update.details');
+//        Route::get('update-admin-delete/{id}', 'AdminController@destroy')->name('update.destroy');
 
         //Roles Routes//
         Route::get('view-roles', 'RolesController@index')->name('roles.index');

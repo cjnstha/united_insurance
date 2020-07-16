@@ -48,12 +48,12 @@
                                         <td>{{++$key}}</td>
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->email}}</td>
-                                        <td class="inline-flex">
-                                            <a href="{{route('users.edit', $user->id)}}" class="btn btn-warning"><i class="fas fa-edit"></i> Edit </a>
-                                            &nbsp; &nbsp;
-                                            <a href="{{route('update.destroy', $user->id)}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete
-                                            </a>
-                                        </td>
+{{--                                        <td class="inline-flex">--}}
+{{--                                            <a href="{{route('users.edit', $user->id)}}" class="btn btn-warning"><i class="fas fa-edit"></i> Edit </a>--}}
+{{--                                            &nbsp; &nbsp;--}}
+{{--                                            <a href="{{route('update.destroy', $user->id)}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete--}}
+{{--                                            </a>--}}
+{{--                                        </td>--}}
                                     </tr>
                                 @empty
                                     <h3>No Data Available</h3>
