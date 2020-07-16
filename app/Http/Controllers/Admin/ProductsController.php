@@ -31,9 +31,9 @@ class ProductsController extends Controller
             $ext = $image->getClientOriginalExtension();
             $destination = 'images/products';
             $photo_name = md5(time());
-            $photo_original_name = $destination . '/' . $photo_name . '.' . $ext;
-            $image->move($destination, $photo_original_name);
-            $product_image = $photo_original_name;
+            $photo_original_names = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_names);
+            $product_image = $photo_original_names;
         }
 
         if ($request->hasfile('product_icon')) {
@@ -51,8 +51,8 @@ class ProductsController extends Controller
             $ext = $image->getClientOriginalExtension();
             $destination = 'file/products';
             $photo_name = md5(time());
-            $photo_original_name = $destination . '/' . $photo_name . '.' . $ext;
-            $image->move($destination, $photo_original_name);
+            $photo_original_namess = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_namess);
             $product_pdf = $photo_original_name;
         }
         if ($request->hasfile('file_doc')) {
@@ -80,8 +80,8 @@ class ProductsController extends Controller
             'slider3_nep' => request('slider3_nep'),
             'file_pdf' => $product_pdf,
             'file_doc' => $product_doc,
-            'claim_form'=>request('claim_form'),
-            'proposal_form'=>request('proposal_form'),
+//            'claim_form'=>request('claim_form'),
+//            'proposal_form'=>request('proposal_form'),
             'status' => request('status'),
         ]);
         return redirect()->route('products.index')->with('flash_message_success', 'Products Details Added Successfully');

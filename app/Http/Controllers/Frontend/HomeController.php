@@ -15,15 +15,15 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
-        $abouts = AboutUs::all();
-        $about = json_decode(json_encode($abouts));
+    public function index()
+    {
+        $abouts = AboutUs::latest()->get();
         $products = ProductDetail::all();
-        $chairman = TeamMember::where('team_position','Information Officer')->first();
+        $chairman = TeamMember::where('team_position', 'Information Officer')->first();
         $news = News::take(1)->get();
-        $recents = News::orderBy('created_at','ASC')->latest()->take(3)->get();
+        $recents = News::orderBy('created_at', 'ASC')->latest()->take(3)->get();
         $popups = PopUp::latest()->take(1)->get();
         $infos = Information::all();
-        return view('frontend.home',compact('abouts','products','chairman','news','recents','popups','infos'));
+        return view('frontend.home', compact('abouts', 'products', 'chairman', 'news', 'recents', 'popups','infos'));
     }
 }

@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="{{url('plugins/jqvmap/jqvmap.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{url('admin_css/adminlte.min.css')}}">
+
+{{--    <link rel="stylesheet" href="{{url('admin_css/main.css')}}">--}}
+
+    <link rel="stylesheet" href="{{url('admin_css/view-print-info.css')}}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Daterange picker -->
@@ -28,6 +32,9 @@
     <link rel="stylesheet" href="{{url('plugins/summernote/summernote-bs4.css')}}">
     <!-- Google Font: Source Sans Pro -->
     {{--  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">--}}
+
+
+  <link rel="stylesheet"href="https://printjs-4de6.kxcdn.com/print.min.css">
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -80,8 +87,10 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('admin_js/demo.js')}}"></script>
 <script src="{{url('ckeditor/ckeditor.js')}}"></script>
-//Check Password Js//
+
 <script src="{{url('admin_js/admin_scripts.js')}}"></script>
+
+<script src ="https://printjs-4de6.kxcdn.com/print.min.js"></script>
 <!-- page script -->
 <script>
     $(function () {

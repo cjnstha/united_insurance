@@ -6,6 +6,7 @@ use App\CoronaFamily;
 use App\CoronalPolicy;
 use App\CovidInsurance;
 use App\Http\Controllers\Controller;
+use App\PersonalDetails;
 use App\PropertyInsurance;
 use App\PropertyPolicy;
 use App\ThirdParty;
@@ -18,240 +19,368 @@ use Illuminate\Support\Facades\Input;
 
 class BuyInsuranceController extends Controller
 {
-    /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function index()
-    {
-        return view('frontend.pages.claim-renew');
-    }
-
     //Property Insurance Buy//
 
-    /**
-     * @param Request $request
-     * @return RedirectResponse
-     */
-    public function property(Request $request)
+    public function createProperty()
     {
-        if ($request->isMethod('post')) {
-            $data = $request->all();
-            $properties = new PropertyInsurance;
-            $properties->name = $data['name'];
-            $properties->address = $data['address'];
-            $properties->district = $data['district'];
-            $properties->lgus = $data['lgus'];
-            $properties->tole = $data['tole'];
-            $properties->ward_no = $data['ward_no'];
-            $properties->phone_no = $data['phone_no'];
-            $properties->dob = $data['dob'];
-            $properties->email = $data['email'];
-            $properties->father_name = $data['father_name'];
-            $properties->grand_father_name = $data['grand_father_name'];
-            $properties->vat_pan_no = $data['vat_pan_no'];
-            $properties->citizenship_no = $data['citizenship_no'];
-            $properties->citizenship_issued_date = $data['citizenship_issued_date'];
-            $properties->citizenship_issued_place = $data['citizenship_issued_place'];
-            $properties->pp_image = $data['pp_image'];
-            $properties->citizen_doc = $data['citizen_doc'];
-            $properties->citizen_back = $data['citizen_back'];
-            $properties->save();
-            return redirect()->back();
-        }
+        return view('frontend.pages.property_insurance');
     }
 
-    /**
-     * @param Request $request
-     * @return RedirectResponse
-     */
-    public function policy(Request $request)
+    public function storeProperty(Request $request)
     {
-
-        if ($request->isMethod('post')) {
-            $data = $request->all();
-            $policies = new PropertyPolicy;
-            $policies->owner_name = $data['owner_name'];
-            $policies->districts = $data['districts'];
-            $policies->address = $data['address'];
-            $policies->location_nature = $data['location_nature'];
-            $policies->building_stories = $data['building_stories'];
-            $policies->construction_class = $data['construction_class'];
-            $policies->pool = $data['pool'];
-            $policies->value_property = $data['value_property'];
-            $policies->remarks = $data['remarks'];
-            $policies->image = $data['image'];
-            $policies->policy_effective = $data['policy_effective'];
-            $policies->policy_expiry = $data['policy_expiry'];
-            $policies->save();
-            return redirect()->back();
+        if ($request->hasfile('pp_image')) {
+            $image = $request->file('pp_image');
+            $ext = $image->getClientOriginalExtension();
+            $destination = 'images/buy';
+            $photo_name = md5(time() + 1);
+            $photo_original_name_doc = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_name_doc); //images/  images/encdata.exc
+            $image1 = $photo_original_name_doc;
+        }
+        if ($request->hasfile('citizen_doc')) {
+            $image = $request->file('citizen_doc');
+            $ext = $image->getClientOriginalExtension();
+            $destination = 'images/buy';
+            $photo_name = md5(time() + 2);
+            $photo_original_name_doc = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_name_doc); //images/  images/encdata.exc
+            $citizen_doc = $photo_original_name_doc;
         }
 
-    }
-
-    //Covid-19 Insurance Buy//
-
-
-    /**
-     * @param Request $request
-     * @return RedirectResponse
-     */
-    public function corona(Request $request)
-    {
-        if ($request->isMethod('post')) {
-            $data = $request->all();
-            $covids = new CovidInsurance;
-            $covids->name = $data['name'];
-            $covids->address = $data['address'];
-            $covids->district = $data['district'];
-            $covids->lgus = $data['lgus'];
-            $covids->tole = $data['tole'];
-            $covids->ward_no = $data['ward_no'];
-            $covids->phone_no = $data['phone_no'];
-            $covids->dob = $data['dob'];
-            $covids->email = $data['email'];
-            $covids->father_name = $data['father_name'];
-            $covids->grand_father_name = $data['grand_father_name'];
-            $covids->vat_pan_no = $data['vat_pan_no'];
-            $covids->citizenship_no = $data['citizenship_no'];
-            $covids->citizenship_issued_date = $data['citizenship_issued_date'];
-            $covids->citizenship_issued_place = $data['citizenship_issued_place'];
-            $covids->pp_image = $data['pp_image'];
-            $covids->citizen_doc = $data['citizen_doc'];
-            $covids->citizen_back = $data['citizen_back'];
-            $covids->save();
-            return redirect()->back();
+        if ($request->hasfile('citizen_back')) {
+            $image = $request->file('citizen_back');
+            $ext = $image->getClientOriginalExtension();
+            $destination = 'images/buy';
+            $photo_name = md5(time() + 3);
+            $photo_original_name_doc = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_name_doc); //images/  images/encdata.exc
+            $citizen_back = $photo_original_name_doc;
         }
+
+        if (request()->hasFile('image')) {
+            foreach (request()->file('image') as $file) {
+                $filenameWithExt = $file->getClientOriginalName();
+                // Get Just Filename
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                // Get Just ext
+                $extension = $file->getClientOriginalExtension();
+                // Filename To Store
+                $images = $filename . '_' . time() . '.' . $extension;
+                // Uplopad the image
+                $path = $file->storeAs('public/images/policies', $images);
+                $picture[] = $images;
+            }
+        } else {
+            $picture = '';
+        }
+
+        $property = PersonalDetails::create([
+            'insurance_type' => request('insurance_type'),
+            'name' => request('name'),
+            'address' => request('address'),
+            'district' => request('district'),
+            'lgus' => request('lgus'),
+            'tole' => request('tole'),
+            'ward_no' => request('ward_no'),
+            'phone_no' => request('phone_no'),
+            'dob' => request('dob'),
+            'email' => request('email'),
+            'father_name' => request('father_name'),
+            'grand_father_name' => request('grand_father_name'),
+            'vat_pan_no' => request('vat_pan_no'),
+            'citizenship_no' => request('citizenship_no'),
+            'citizenship_issued_date' => request('citizenship_issued_date'),
+            'citizenship_issued_place' => request('citizenship_issued_place'),
+            'pp_image' => $image1,
+            'citizen_doc' => $citizen_doc,
+            'citizen_back' => $citizen_back,
+        ]);
+        PropertyPolicy::create([
+            'personal_id' => $property->id,
+            'owner_name' => request('owner_name'),
+            'districts' => request('districts'),
+            'address' => request('address'),
+            'location_nature' => request('location_nature'),
+            'building_stories' => request('building_stories'),
+            'construction_class' => request('construction_class'),
+            'pool' => request('pool'),
+            'value_property' => request('value_property'),
+            'remarks' => request('remarks'),
+            'image' => (empty($picture)) ? null : json_encode($picture),
+            'policy_effective' => request('policy_effective'),
+            'policy_expiry' => request('policy_expiry'),
+        ]);
+        return redirect('/buy-renew/property');
     }
 
-    /**
-     * @param Request $request
-     * @return RedirectResponse
-     */
-    public function policyCorona(Request $request)
+
+    //Corona Insurance//
+
+    public function createCorona()
     {
-        $data = $request->all();
+        return view('frontend.pages.corona-insurance');
+    }
+
+    public function storeCorona(Request $request)
+    {
+        if ($request->hasfile('pp_image')) {
+            $image = $request->file('pp_image');
+            $ext = $image->getClientOriginalExtension();
+            $destination = 'images/buy';
+            $photo_name = md5(time() + 1);
+            $photo_original_name_doc = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_name_doc); //images/  images/encdata.exc
+            $image2 = $photo_original_name_doc;
+        }
+        if ($request->hasfile('citizen_doc')) {
+            $image = $request->file('citizen_doc');
+            $ext = $image->getClientOriginalExtension();
+            $destination = 'images/buy';
+            $photo_name = md5(time() + 2);
+            $photo_original_name_doc = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_name_doc); //images/  images/encdata.exc
+            $citizen_doc = $photo_original_name_doc;
+        }
+
+        if ($request->hasfile('citizen_back')) {
+            $image = $request->file('citizen_back');
+            $ext = $image->getClientOriginalExtension();
+            $destination = 'images/buy';
+            $photo_name = md5(time() + 3);
+            $photo_original_name_doc = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_name_doc); //images/  images/encdata.exc
+            $citizen_back = $photo_original_name_doc;
+        }
+
+        $coronas = PersonalDetails::create([
+            'insurance_type' => request('insurance_type'),
+            'name' => request('name'),
+            'address' => request('address'),
+            'district' => request('district'),
+            'lgus' => request('lgus'),
+            'tole' => request('tole'),
+            'ward_no' => request('ward_no'),
+            'phone_no' => request('phone_no'),
+            'dob' => request('dob'),
+            'email' => request('email'),
+            'father_name' => request('father_name'),
+            'grand_father_name' => request('grand_father_name'),
+            'vat_pan_no' => request('vat_pan_no'),
+            'citizenship_no' => request('citizenship_no'),
+            'citizenship_issued_date' => request('citizenship_issued_date'),
+            'citizenship_issued_place' => request('citizenship_issued_place'),
+            'pp_image' => $image2,
+            'citizen_doc' => $citizen_doc,
+            'citizen_back' => $citizen_back,
+        ]);
         $corona = CoronalPolicy::create([
-            'policy_type' => $data['policy_type'],
-            'policy_plan' => $data['policy_plan'],
-            'number_family' => $data['number_family'],
-            'policy_effective' => $data['policy_effective']
+            'personal_id' => $coronas->id,
+            'policy_type' => request('policy_type'),
+            'policy_plan' => request('policy_plan'),
+            'number_family' => request('number_family'),
+            'policy_effective' => request('policy_effective')
         ]);
         if (count($request->sfull_name) > 0) {
             foreach ($request->sfull_name as $item => $v) {
                 $data2 = array(
                     'corona_id' => $corona->id,
-                    'full_name' => $request->sfull_name[$item],
+                    'full_name' => $v,
                     'age' => $request->sage[$item],
                     'relations' => $request->srelations[$item],
                 );
                 CoronaFamily::insert($data2);
             }
         }
-        return redirect()->back();
+        return redirect('/buy-renew/corona-insurance');
     }
 
-    //Travel Insurance Buy//
-
-    public function travel(Request $request)
+    //Travel Insurance//
+    public function createTravel()
     {
-        if ($request->isMethod('post')) {
-            $data = $request->all();
-            $travels = new TravelInsurace;
-            $travels->name = $data['name'];
-            $travels->address = $data['address'];
-            $travels->district = $data['district'];
-            $travels->lgus = $data['lgus'];
-            $travels->tole = $data['tole'];
-            $travels->ward_no = $data['ward_no'];
-            $travels->phone_no = $data['phone_no'];
-            $travels->dob = $data['dob'];
-            $travels->email = $data['email'];
-            $travels->father_name = $data['father_name'];
-            $travels->grand_father_name = $data['grand_father_name'];
-            $travels->vat_pan_no = $data['vat_pan_no'];
-            $travels->citizenship_no = $data['citizenship_no'];
-            $travels->citizenship_issued_date = $data['citizenship_issued_date'];
-            $travels->citizenship_issued_place = $data['citizenship_issued_place'];
-            $travels->pp_image = $data['pp_image'];
-            $travels->citizen_doc = $data['citizen_doc'];
-            $travels->citizen_back = $data['citizen_back'];
-            $travels->save();
-            return redirect()->back();
-        }
+        return view('frontend.pages.travel-insurance');
     }
 
-    public function travelPolicy(Request $request){
-        if($request->isMethod('post')){
-            $data = $request->all();
-            $travelPolicy = new TravelPolicy;
-            $travelPolicy->passport_number = $data['passport_number'];
-            $travelPolicy->place_visit = $data['place_visit'];
-            $travelPolicy->occupation = $data['occupation'];
-            $travelPolicy->doctors_name = $data['doctors_name'];
-            $travelPolicy->doctor_address = $data['doctor_address'];
-            $travelPolicy->contact_number = $data['contact_number'];
-            $travelPolicy->age = $data['age'];
-            $travelPolicy->days = $data['days'];
-            $travelPolicy->rate = $data['rate'];
-            $travelPolicy->plan = $data['plan'];
-            $travelPolicy->cover = $data['cover'];
-            $travelPolicy->image = $data['image'];
-            $travelPolicy->policy_date = $data['policy_date'];
-            $travelPolicy->save();
-            return redirect()->back();
+    public function storeTravel(Request $request)
+    {
+
+        if ($request->hasfile('pp_image')) {
+            $image = $request->file('pp_image');
+            $ext = $image->getClientOriginalExtension();
+            $destination = 'images/buy';
+            $photo_name = md5(time() + 1);
+            $photo_original_name_doc = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_name_doc); //images/  images/encdata.exc
+            $pp_image = $photo_original_name_doc;
         }
+        if ($request->hasfile('citizen_doc')) {
+            $image = $request->file('citizen_doc');
+            $ext = $image->getClientOriginalExtension();
+            $destination = 'images/buy';
+            $photo_name = md5(time() + 2);
+            $photo_original_name_doc = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_name_doc); //images/  images/encdata.exc
+            $citizen_doc = $photo_original_name_doc;
+        }
+
+        if ($request->hasfile('citizen_back')) {
+            $image = $request->file('citizen_back');
+            $ext = $image->getClientOriginalExtension();
+            $destination = 'images/buy';
+            $photo_name = md5(time() + 3);
+            $photo_original_name_doc = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_name_doc); //images/  images/encdata.exc
+            $citizen_back = $photo_original_name_doc;
+        }
+
+        if (request()->hasFile('image')) {
+            foreach (request()->file('image') as $file) {
+                $filenameWithExt = $file->getClientOriginalName();
+                // Get Just Filename
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                // Get Just ext
+                $extension = $file->getClientOriginalExtension();
+                // Filename To Store
+                $images = $filename . '_' . time() . '.' . $extension;
+                // Uplopad the image
+                $path = $file->storeAs('public/images/policies', $images);
+                $source[] = $images;
+            }
+        } else {
+            $source = '';
+        }
+        $travels = PersonalDetails::create([
+            'insurance_type' => request('insurance_type'),
+            'name' => request('name'),
+            'address' => request('address'),
+            'district' => request('district'),
+            'lgus' => request('lgus'),
+            'tole' => request('tole'),
+            'ward_no' => request('ward_no'),
+            'phone_no' => request('phone_no'),
+            'dob' => request('dob'),
+            'email' => request('email'),
+            'father_name' => request('father_name'),
+            'grand_father_name' => request('grand_father_name'),
+            'vat_pan_no' => request('vat_pan_no'),
+            'citizenship_no' => request('citizenship_no'),
+            'citizenship_issued_date' => request('citizenship_issued_date'),
+            'citizenship_issued_place' => request('citizenship_issued_place'),
+            'pp_image' => $pp_image,
+            'citizen_doc' => $citizen_doc,
+            'citizen_back' => $citizen_back
+        ]);
+        TravelPolicy::create([
+            'personal_id' => $travels->id,
+            'passport_number' => request('passport_number'),
+            'place_visit' => request('place_visit'),
+            'occupation' => request('occupation'),
+            'doctors_name' => request('doctors_name'),
+            'doctor_address' => request('doctor_address'),
+            'contact_number' => request('contact_number'),
+            'age' => request('age'),
+            'days' => request('days'),
+            'rate' => request('rate'),
+            'plan' => request('plan'),
+            'cover' => request('cover'),
+            'image' => (empty($source)) ? null : json_encode($source),
+            'policy_date' => request('policy_date'),
+        ]);
+        return redirect('/buy-renew/travel');
     }
 
-    //Third Party //
+    //Third Party//
+    public function createThird()
+    {
+        return view('frontend.pages.third-insurance');
+    }
+
     public function thirdParty(Request $request)
     {
-        if ($request->isMethod('post')) {
-            $data = $request->all();
-            $thirdParty = new ThirdParty;
-            $thirdParty->name = $data['name'];
-            $thirdParty->address = $data['address'];
-            $thirdParty->district = $data['district'];
-            $thirdParty->lgus = $data['lgus'];
-            $thirdParty->tole = $data['tole'];
-            $thirdParty->ward_no = $data['ward_no'];
-            $thirdParty->phone_no = $data['phone_no'];
-            $thirdParty->dob = $data['dob'];
-            $thirdParty->email = $data['email'];
-            $thirdParty->father_name = $data['father_name'];
-            $thirdParty->grand_father_name = $data['grand_father_name'];
-            $thirdParty->vat_pan_no = $data['vat_pan_no'];
-            $thirdParty->citizenship_no = $data['citizenship_no'];
-            $thirdParty->citizenship_issued_date = $data['citizenship_issued_date'];
-            $thirdParty->citizenship_issued_place = $data['citizenship_issued_place'];
-            $thirdParty->pp_image = $data['pp_image'];
-            $thirdParty->citizen_doc = $data['citizen_doc'];
-            $thirdParty->citizen_back = $data['citizen_back'];
-            $thirdParty->save();
-            return redirect()->back();
+
+        if ($request->hasfile('pp_image')) {
+            $image = $request->file('pp_image');
+            $ext = $image->getClientOriginalExtension();
+            $destination = 'images/buy';
+            $photo_name = md5(time() + 1);
+            $photo_original_name_doc = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_name_doc); //images/  images/encdata.exc
+            $pp_image = $photo_original_name_doc;
         }
+        if ($request->hasfile('citizen_doc')) {
+            $image = $request->file('citizen_doc');
+            $ext = $image->getClientOriginalExtension();
+            $destination = 'images/buy';
+            $photo_name = md5(time() + 2);
+            $photo_original_name_doc = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_name_doc); //images/  images/encdata.exc
+            $citizen_doc = $photo_original_name_doc;
+        }
+
+        if ($request->hasfile('citizen_back')) {
+            $image = $request->file('citizen_back');
+            $ext = $image->getClientOriginalExtension();
+            $destination = 'images/buy';
+            $photo_name = md5(time() + 3);
+            $photo_original_name_doc = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_name_doc); //images/  images/encdata.exc
+            $citizen_back = $photo_original_name_doc;
+        }
+
+        if (request()->hasFile('image')) {
+            foreach (request()->file('image') as $file) {
+                $filenameWithExt = $file->getClientOriginalName();
+                // Get Just Filename
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                // Get Just ext
+                $extension = $file->getClientOriginalExtension();
+                // Filename To Store
+                $images = $filename . '_' . time() . '.' . $extension;
+                // Uplopad the image
+                $path = $file->storeAs('public/images/policies', $images);
+                $source[] = $images;
+            }
+        } else {
+            $source = '';
+        }
+        $thirds = PersonalDetails::create([
+            'insurance_type' => request('insurance_type'),
+            'name' => request('name'),
+            'address' => request('address'),
+            'district' => request('district'),
+            'lgus' => request('lgus'),
+            'tole' => request('tole'),
+            'ward_no' => request('ward_no'),
+            'phone_no' => request('phone_no'),
+            'dob' => request('dob'),
+            'email' => request('email'),
+            'father_name' => request('father_name'),
+            'grand_father_name' => request('grand_father_name'),
+            'vat_pan_no' => request('vat_pan_no'),
+            'citizenship_no' => request('citizenship_no'),
+            'citizenship_issued_date' => request('citizenship_issued_date'),
+            'citizenship_issued_place' => request('citizenship_issued_place'),
+            'pp_image' => $pp_image,
+            'citizen_doc' => $citizen_doc,
+            'citizen_back' => $citizen_back
+        ]);
+        ThirdPartyPolicy::create([
+            'personal_id' => $thirds->id,
+            'motor_type' => request('motor_type'),
+            'cubic_capacity' => request('cubic_capacity'),
+            'pool' => request('pool'),
+            'year' => request('year'),
+            'pradesh_zone' => request('pradesh_zone'),
+            'lot_no' => request('lot_no'),
+            'vechile_type' => request('vechile_type'),
+            'vechile_id' => request('vechile_id'),
+            'brand' => request('brand'),
+            'model' => request('model'),
+            'chasis' => request('chasis'),
+            'engine' => request('engine'),
+            'images' => (empty($source)) ? null : json_encode($source),
+            'policy_effective' => request('policy_effective'),
+        ]);
+        return redirect('/buy-renew/third-party');
     }
 
-    public function thirdPolicy(Request $request)
-    {
-        if ($request->isMethod('post')) {
-            $data = $request->all();
-            $thirdParty = new ThirdPartyPolicy;
-            $thirdParty->motor_type = $data['motor_type'];
-            $thirdParty->cubic_capacity = $data['cubic_capacity'];
-            $thirdParty->pool = $data['pool'];
-            $thirdParty->year = $data['year'];
-            $thirdParty->pradesh_zone = $data['pradesh_zone'];
-            $thirdParty->lot_no = $data['lot_no'];
-            $thirdParty->vechile_type = $data['vechile_type'];
-            $thirdParty->vechile_id = $data['vechile_id'];
-            $thirdParty->brand = $data['brand'];
-            $thirdParty->model = $data['model'];
-            $thirdParty->chasis = $data['chasis'];
-            $thirdParty->engine = $data['engine'];
-            $thirdParty->images = $data['images'];
-            $thirdParty->policy_effective = $data['policy_effective'];
-            $thirdParty->save();
-            return redirect()->back();
-        }
-    }
 }

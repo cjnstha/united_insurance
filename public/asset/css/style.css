@@ -3050,7 +3050,7 @@ a.item-client {
     background-repeat  : no-repeat;
     background-position: right center;
     clear              : both;
-    padding         : 10px 10px 20px 10px;
+    padding            : 10px 10px 20px 10px;
     margin             : auto;
     margin-top         : 20px;
 }
@@ -3232,9 +3232,7 @@ a.item-client {
     background    : #f5f5f5;
 }
 
-#Projects {
-    padding-bottom: 60px;
-}
+
 
 #DataTables_Table_0_wrapper {
     margin-top: 60px;
@@ -3254,17 +3252,19 @@ a.item-client {
 .table .thead-light th {
     background  : #0088c7;
     color       : #fff;
-    line-height :30px;
-    margin-left :3px;
+    line-height : 30px;
+    margin-left : 3px;
     border-color: #dee2e6;
 }
-.table>tbody>tr:nth-of-type(even){
+
+.table>tbody>tr:nth-of-type(even) {
     background-color: #f9f9f9;
 }
 
-.table-striped > tbody > tr:nth-of-type(odd) {
+.table-striped>tbody>tr:nth-of-type(odd) {
     background-color: #f9f9f9;
 }
+
 /*side Nav for inner page*/
 .tab_nav_side {
     background: #f4f4f4;
@@ -3275,7 +3275,7 @@ a.item-client {
     position: fixed;
     right   : 0px;
     bottom  : 46%;
-    z-index: 2;
+    z-index : 2;
 }
 
 .right-corder-container .right-corder-container-button {
@@ -3431,7 +3431,7 @@ a.item-client {
 
 .team-overlay p {
     display  : block;
-    font-size: 13px;
+    font-size: 11px;
     color    : #a6a6a6;
 }
 
@@ -3478,12 +3478,12 @@ a.item-client {
 }
 
 .info-team h5 {
-    font-size     : 13px;
-    font-weight   : 700;
-    margin        : 0 0 5px;
+    font-size  : 13px;
+    font-weight: 700;
+    margin     : 0 0 5px;
 
-    color         : #373636;
-    font-family   : 'Ubuntu', sans-serif;
+    color      : #373636;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .team-company {
@@ -3491,8 +3491,9 @@ a.item-client {
     color        : #666666;
     margin-bottom: 0;
 }
+
 .team-item {
-    margin-bottom: 30px!important;
+    margin-bottom: 30px !important;
 }
 
 /* -------------------------------------------
@@ -4574,7 +4575,7 @@ ul.insurance-list b {
 }
 
 ul.insurance-list span {
-    width     : 200px;
+
     text-align: left;
     float     : right;
 }
@@ -4672,7 +4673,7 @@ ul.insurance-list span {
 .insurance-service-all .insurance-coverage .single-insurance::after {
     -webkit-box-shadow: 0px 1px 5px 2px rgba(166, 166, 166, 1);
     -moz-box-shadow   : 0px 1px 5px 2px rgba(166, 166, 166, 1);
-    box-shadow        : 0px 1px 5px 2px rgba(166, 166, 166, 1);
+    box-shadow        : 0px 1px 5px 2px #0088c782;
     content           : "";
     height            : 100%;
     left              : 0;
@@ -4754,23 +4755,26 @@ ul.insurance-list span {
 }
 
 .single-insurance-content p {
-    font-size: 13px;
+    font-size  : 13px;
     line-height: 37px;
+    max-height : 109px;
+    overflow   : hidden;
 }
 
 .service-icons img {
-    height: 80px;
+    height : 80px;
+    padding: 7px;
 }
 
 .insurance-service-all .insurance-coverage .owl-prev {
     position     : absolute;
     left         : -3px;
-    background   : #000000 !important;
+    background   : #0088c7 !important;
     transition   : all 0.3s ease-out 0s;
-    border       : 1px solid #000000;
+    border       : 1px solid #0088c7;
     top          : 135px;
     width        : 36px;
-    height       : 45px;
+    height       : 50px;
     border-radius: 0px !important;
     z-index      : 99;
     opacity      : 0 !important;
@@ -4791,12 +4795,12 @@ ul.insurance-list span {
 .insurance-service-all .insurance-coverage .owl-next {
     position     : absolute;
     right        : -2px;
-    background   : #000000 !important;
+    background   : #0088c7 !important;
     transition   : all 0.3s ease-out 0s;
-    border       : 1px solid #000000;
+    border       : 1px solid #0088c7;
     top          : 135px;
     width        : 36px;
-    height       : 45px;
+    height       : 50px;
     border-radius: 0 !important;
     z-index      : 99;
     opacity      : 0 !important;
@@ -4868,495 +4872,6 @@ ul.insurance-list span {
 .index-two .feature,
 .index-two .feature h3 {
     margin-top: 0;
-}
-
-/* -------------------------------------------
-   23. Coming soon
-----------------------------------------------*/
-
-.coming-soon {
-    text-align: center;
-    color     : #fff;
-}
-
-.coming-soon h3 {
-    font-size  : 60px;
-    line-height: 75px;
-    font-weight: 300;
-    color      : #fff;
-    margin     : 10px 0px;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-
-.coming-soon .countdown {
-    text-align: center;
-}
-
-.coming-soon .countdown .date {
-    display      : inline-block;
-    font-size    : 40px;
-    width        : 120px;
-    height       : 120px;
-    border-radius: 100px;
-    color        : #fff;
-    padding-top  : 20px;
-    margin-right : 7px;
-    margin-left  : 7px;
-    margin-bottom: 0;
-    background   : rgba(0, 0, 0, 0.2);
-    border       : 3px solid rgba(0, 0, 0, 0.1);
-    box-shadow   : inset 0px 0px 15px rgba(0, 0, 0, 0.1);
-}
-
-.countdown .date span {
-    display   : block;
-    font-size : 13px;
-    color     : rgba(255, 255, 255, 1);
-    margin-top: -10px;
-}
-
-.coming-soon hr {
-    max-width    : 500px;
-    margin       : 0 auto;
-    margin-top   : 40px;
-    margin-bottom: 40px;
-    border-top   : 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 0px;
-}
-
-.coming-soon h4 {
-    color        : #fff;
-    margin-bottom: 10px;
-    font-weight  : 300;
-}
-
-.cs-footer {
-    text-align   : center;
-    margin-top   : 40px;
-    color        : #fff;
-    margin-bottom: 10px;
-}
-
-.cs-footer a {
-    color: #fff !important;
-}
-
-@media (max-width: 480px) {
-    .coming-soon h4 {
-        font-size: 13px !important;
-    }
-
-    .coming-soon h3 {
-        font-size: 40px !important;
-    }
-
-    .countdown {
-        margin-top: 40px !important;
-    }
-}
-
-@media only screen and (min-width : 768px) and (max-width : 991px) {
-    .bod-head {
-        left  : 26%;
-        margin: 0px auto 30px;
-    }
-}
-
-@media (max-width: 767px) {
-    .coming-soon h4 {
-        font-size: 20px !important;
-    }
-
-    .bod-head {
-        left  : 0px;
-        margin: 0px auto 20px;
-    }
-
-    .coming-soon h4 span {
-        padding: 6px 13px;
-    }
-
-    .coming-soon h3 {
-        font-size: 30px;
-    }
-
-    .countdown {
-        margin-top   : 30px !important;
-        margin-bottom: 40px;
-    }
-
-    .countdown .date {
-        font-size   : 35px !important;
-        height      : 95px !important;
-        width       : 95px !important;
-        margin-left : 5px !important;
-        margin-right: 5px !important;
-        padding-top : 20px !important;
-    }
-
-    .coming-soon-item hr {
-        max-width: 400px;
-    }
-}
-
-
-
-
-/* -------------------------------------------
-   24. Shortcode - Style A pricing Table
-----------------------------------------------*/
-
-
-.heading h2 {
-    margin-bottom : 30px;
-    color         : #585864;
-    position      : relative;
-    text-align    : center;
-    font-weight   : 500;
-    text-transform: uppercase;
-}
-
-.heading h2:after {
-    position        : absolute;
-    content         : "";
-    bottom          : -30px;
-    left            : 50%;
-    margin-left     : -30px;
-    width           : 60px;
-    height          : 2px;
-    background-color: #585864;
-}
-
-.pricing-table {
-    float     : left;
-    margin-top: 60px;
-    position  : relative;
-    width     : 100%;
-}
-
-.pricing-table>.igl-background-fixed-img {
-    -webkit-border-radius: 23px;
-    -moz-border-radius   : 23px;
-    -ms-border-radius    : 23px;
-    -o-border-radius     : 23px;
-    border-radius        : 23px;
-}
-
-.pricing-table-box {
-    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.91);
-    float     : left;
-    list-style: outside none none;
-    margin    : 0;
-    padding   : 120px 0 0;
-    position  : relative;
-    width     : 100%;
-    z-index   : 99;
-}
-
-.pricing-product {
-    background           : none repeat scroll 0 0 #7e7e7e;
-    -webkit-border-radius: 50%;
-    -moz-border-radius   : 50%;
-    -ms-border-radius    : 50%;
-    -o-border-radius     : 50%;
-    border-radius        : 50%;
-    color                : #ffffff;
-    font-size            : 29px;
-    font-weight          : bold;
-    height               : 110px;
-    left                 : 50%;
-    line-height          : 110px;
-    margin-left          : -55px;
-    margin-top           : -55px;
-    position             : absolute;
-    text-align           : center;
-    top                  : 0;
-    width                : 110px;
-    z-index              : 0;
-    -webkit-transition   : all 0.4s ease 0s;
-    -moz-transition      : all 0.4s ease 0s;
-    -ms-transition       : all 0.4s ease 0s;
-    -o-transition        : all 0.4s ease 0s;
-    transition           : all 0.4s ease 0s;
-}
-
-.pricing-table-box:hover>.pricing-product {
-    -webkit-transform: scale(1.2);
-    -moz-transform   : scale(1.2);
-    -ms-transform    : scale(1.2);
-    -o-transform     : scale(1.2);
-    transform        : scale(1.2);
-}
-
-.pricing-table-box:hover>.pricing-product:before {
-    -webkit-transform : scale(1);
-    -moz-transform    : scale(1);
-    -ms-transform     : scale(1);
-    -o-transform      : scale(1);
-    transform         : scale(1);
-    -webkit-transition: all 0.4s ease 0.2s;
-    -moz-transition   : all 0.4s ease 0.2s;
-    -ms-transition    : all 0.4s ease 0.2s;
-    -o-transition     : all 0.4s ease 0.2s;
-    transition        : all 0.4s ease 0.2s;
-}
-
-.pricing-table-box:hover>.pricing-product:after {
-    -webkit-transform : scale(1);
-    -moz-transform    : scale(1);
-    -ms-transform     : scale(1);
-    -o-transform      : scale(1);
-    transform         : scale(1);
-    -webkit-transition: all 0.4s ease 0.1s;
-    -moz-transition   : all 0.4s ease 0.1s;
-    -ms-transition    : all 0.4s ease 0.1s;
-    -o-transition     : all 0.4s ease 0.1s;
-    transition        : all 0.4s ease 0.1s;
-}
-
-.pricing-product>i {
-    font-size  : 21px;
-    font-style : normal;
-    font-weight: 300;
-}
-
-.pricing-product:before {
-    background           : none repeat scroll 0 0 #7e7e7e;
-    -webkit-border-radius: 50%;
-    -moz-border-radius   : 50%;
-    -ms-border-radius    : 50%;
-    -o-border-radius     : 50%;
-    border-radius        : 50%;
-    content              : "";
-    height               : 100%;
-    left                 : 0;
-    opacity              : 0.26;
-    position             : absolute;
-    top                  : 0;
-    -webkit-transform    : scale(1.2);
-    -moz-transform       : scale(1.2);
-    -ms-transform        : scale(1.2);
-    -o-transform         : scale(1.2);
-    transform            : scale(1.2);
-    width                : 100%;
-    z-index              : -1;
-    -webkit-transition   : all 0.4s ease 0s;
-    -moz-transition      : all 0.4s ease 0s;
-    -ms-transition       : all 0.4s ease 0s;
-    -o-transition        : all 0.4s ease 0s;
-    transition           : all 0.4s ease 0s;
-}
-
-.pricing-product:after {
-    background           : none repeat scroll 0 0 #7e7e7e;
-    -webkit-border-radius: 50%;
-    -moz-border-radius   : 50%;
-    -ms-border-radius    : 50%;
-    -o-border-radius     : 50%;
-    border-radius        : 50%;
-    content              : "";
-    height               : 100%;
-    left                 : 0;
-    opacity              : 0.10;
-    position             : absolute;
-    top                  : 0;
-    -webkit-transform    : scale(1.4);
-    -moz-transform       : scale(1.4);
-    -ms-transform        : scale(1.4);
-    -o-transform         : scale(1.4);
-    transform            : scale(1.4);
-    width                : 100%;
-    z-index              : -1;
-    -webkit-transition   : all 0.4s ease 0s;
-    -moz-transition      : all 0.4s ease 0s;
-    -ms-transition       : all 0.4s ease 0s;
-    -o-transition        : all 0.4s ease 0s;
-    transition           : all 0.4s ease 0s;
-}
-
-.title {
-    border-bottom: 1px solid #ffffff;
-    color        : #333333;
-    float        : left;
-    font-size    : 19px;
-    padding      : 0 30px 40px;
-    text-align   : center;
-    width        : 100%;
-}
-
-.signup {
-    float     : left;
-    padding   : 40px;
-    text-align: center;
-    width     : 100%;
-}
-
-.signup>.round-btn {
-    background: none repeat scroll 0 0 #fff;
-    border    : medium none;
-    display   : table;
-    float     : none;
-    margin    : 0 auto;
-}
-
-.options {
-    border-bottom : 1px solid #ffffff;
-    color         : #666666;
-    float         : left;
-    font-size     : 14px;
-    letter-spacing: 0.3px;
-    padding       : 13px 0;
-    text-align    : center;
-    width         : 100%;
-}
-
-.pricing-table-bg {
-    background: url("../images/bg-t.jpg") no-repeat scroll 0 0 / 100% 100% rgba(0, 0, 0, 0);
-}
-
-.igl-background-fixed-img {
-    background-attachment: fixed;
-    height               : 100%;
-    left                 : 0;
-    position             : absolute;
-    top                  : 0;
-    width                : 100%;
-    z-index              : 0;
-}
-
-/* Corporate Background color */
-.pricing-table-box:hover>.pricing-product,
-.pricing-table-box:hover>.pricing-product:before,
-.pricing-table-box:hover>.pricing-product:after,
-.open-nav {
-    background: #ff5722;
-}
-
-.pricing-table-box:hover>li.signup a {
-    background: #ff5722;
-}
-
-.pricing-table-box:hover>li.signup a:hover {
-    text-decoration: none;
-    color          : #ffffff;
-}
-
-
-/* Medical Background color */
-
-#medical-plans .pricing-table-box:hover>.pricing-product,
-#medical-plans .pricing-table-box:hover>.pricing-product:before,
-#medical-plans .pricing-table-box:hover>.pricing-product:after,
-#medical-plans .open-nav {
-    background: #0088c7;
-}
-
-#medical-plans .pricing-table-box:hover>li.signup a {
-    background: #0088c7;
-}
-
-.grey.darken-3 {
-    background-color: #424242 !important;
-}
-
-
-
-/*------------------------------------------------------------------
-	Style B pricing Table
---------------------------------------------------------------------*/
-.pricing-col {
-    background-color           : #fff;
-    border                     : 1px solid #F5F5F5;
-    margin-bottom              : 30px;
-    -webkit-transition-duration: .3s;
-    transition-duration        : .3s;
-    -webkit-transition-property: transform;
-    transition-property        : transform;
-    -webkit-transform          : translateZ(0);
-    transform                  : translateZ(0);
-}
-
-.pricing-col:hover,
-.pricing-col:focus {
-    box-shadow       : 0 4px 7px 0 rgba(0, 0, 0, 0.3);
-    color            : #fff;
-    -webkit-transform: translateY(-5px);
-    transform        : translateY(-5px);
-}
-
-.pricing-col.popular {
-    outline: 5px solid #0088c7;
-}
-
-.pricing-header {
-    background-color: #fff;
-    color           : #fff;
-    padding         : 16px 16px 38px 16px;
-    text-align      : center;
-}
-
-.pricing-title {
-    color         : #9E9E9E;
-    font-size     : 12px;
-    font-weight   : 600;
-    text-transform: uppercase;
-}
-
-.pricing-value {
-    color    : #424242;
-    font-size: 48px;
-    margin   : 30px 0px;
-}
-
-.pricing-duration {
-    color        : #9E9E9E;
-    font-size    : 12px;
-    margin-bottom: 30px;
-}
-
-.pricing-content {
-    background-color: #EEEEEE;
-    padding         : 16px;
-}
-
-.pricing-content .btn,
-.pricing-content .btn-secondary {
-    display    : block;
-    font-weight: 600;
-    margin     : 0px 0px 16px 0px;
-    padding    : 10px 12px;
-    text-align : center;
-}
-
-.pricing-content ul {
-    list-style-position: inside;
-    margin             : 0px -16px;
-    padding            : 0px 30px;
-}
-
-.pricing-content ul li {
-    color     : #616161;
-    font-size : 14px;
-    padding   : 7px 0px;
-    text-align: center;
-}
-
-.pricing-content ul li:last-child {
-    border-bottom : 0px;
-    padding-bottom: 0px;
-}
-
-/* ------------- First row pricing Table -------------*/
-.pricing-header .btn:not(.dropdown-toggle),
-.pricing-header .btn-secondary:not(.dropdown-toggle) {
-    background-color: #0088c7;
-    color           : #fff;
-}
-
-.pricing-header .btn:not(.dropdown-toggle):hover,
-.pricing-header .btn-secondary:not(.dropdown-toggle):hover {
-    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.3);
-    color     : #fff;
 }
 
 /* ------------- Shortcode Social Media -------------*/
@@ -5456,30 +4971,22 @@ ul.insurance-list span {
 }
 
 .faq-group .panel-default>.panel-heading {
-    background        : none;
-    /*    padding-left: 0;*/
-    border-radius     : 34px;
-    border            : 1px solid #ddd;
-    border-bottom     : 1px solid #ddd
+    background   : none;
+    border-radius: 34px;
+    border       : 1px solid #ddd;
+    border-bottom: 1px solid #ddd
 }
 
 /*CSS3 Only Toogling*/
-
 .faq-group .panel-heading .accordion-toggle:after {
-    /* symbol for "opening" panels */
     font-family: FontAwesome;
     content    : "\f077";
-    /* adjust as needed, taken from bootstrap.css */
     float      : right;
-    /* adjust as needed */
     color      : grey;
-    /* adjust as needed */
 }
 
 .faq-group .panel-heading .accordion-toggle.collapsed:after {
-    /*symbol for "collapsed" panels */
     content: "\f078";
-    /*adjust as needed, taken from bootstrap.css */
 }
 
 .faq-rightbar .list-group .list-group-item {
@@ -5561,9 +5068,7 @@ ul.insurance-list span {
 /* ---------------------- alert end -------------------*/
 
 
-
 /*====================== Services single content ================*/
-.insurance-single-item-content {}
 
 .insurance-single-item-content .insurance-single-item-nav-holder {
     background   : #f4f4f4;
@@ -5742,10 +5247,7 @@ ul.insurance-list span {
 
 }
 
-
 /* ----------- quick contact --------- */
-.quick-contact {}
-
 .quick-contact .leave-comment .col-md-6,
 .quick-contact .leave-comment .col-md-12 {
     padding-left: 0;
@@ -5773,8 +5275,6 @@ ul.insurance-list span {
     height: 125px;
 }
 
-
-
 /*for header-main products display*/
 .products-info {
     margin-top: 25px;
@@ -5786,17 +5286,13 @@ ul.insurance-list span {
     text-align: center;
 }
 
-.card-wrapper {}
-
 .products-info h1 {
-    color              : #0088c7;
-    font-size          : 26px;
-    font-weight        : 600;
-    background-color   : #fff;
-    line-height        : 30px;
-    text-transform     : uppercase;
-    /* border-bottom   : 2px solid #0088c7; */
-
+    color           : #0088c7;
+    font-size       : 26px;
+    font-weight     : 600;
+    background-color: #fff;
+    line-height     : 30px;
+    text-transform  : uppercase;
 }
 
 .wel-come-title {
@@ -5904,7 +5400,7 @@ ul.insurance-list span {
 }
 
 
-/*aboutus section*/
+/*home aboutus section*/
 .info-officer {
     text-align: center;
 }
@@ -5952,6 +5448,12 @@ ul.insurance-list span {
 
 }
 
+/*product section*/
+.product-form {
+    width : 50%;
+    margin: 20px 0;
+}
+
 .percentage {
     font-size: 30px;
 }
@@ -5967,34 +5469,6 @@ ul.insurance-list span {
     z-index   : 1;
 }
 
-/*awards section*/
-.info-award {
-    padding   : 25px 15px;
-    margin-top: 10px;
-}
-
-.info-award h5 {
-    font-size     : 16px;
-    font-weight   : 500;
-    margin        : 0 0 5px;
-    text-transform: uppercase;
-    color         : #373636;
-    font-family   : 'Ubuntu', sans-serif;
-}
-
-.info-award p {
-    font-size    : 12px;
-    color        : #666666;
-    margin-bottom: 0;
-}
-
-
-/*product section*/
-.product-form {
-    width : 50%;
-    margin: 20px 0;
-}
-
 input[type="checkbox"] {
     margin     : 0px 8px 0px 15px;
     margin-top : 1px \9;
@@ -6004,10 +5478,6 @@ input[type="checkbox"] {
 .table a {
     color: #333;
 }
-
-
-
-
 
 /*for calculation*/
 
@@ -6675,45 +6145,16 @@ only screen and (min-width: 320px) and (max-width: 768px) {
     padding: 5px 15px;
 }
 
-
-.carte {
-    text-align   : center;
-    display      : none;
-    margin-bottom: 20px;
-}
-
-.carte img {
-    height       : 94px;
-    top          : 32px;
-    float        : left;
-    margin-left  : -40px;
-    border-radius: 32%;
-    padding      : 18px 26px;
-    background   : #ffffff;
-    box-shadow   : 0 0 15px #283897;
-}
-
-/*.carte img{
-   height: 65px;
-    border-radius: 50%;
-    padding: 10px 10px;
-    background: #37363600;
-    box-shadow: 0 0 15px #b2afaf;
-    margin-bottom: 23px;
-}*/
-/*.pro-btn-links {
-    background: rgb(255, 214, 88);
-}*/
 .pro-btn-links {
-       text-align: left;
+    text-align: left;
     margin-top: 25px;
 }
 
 .pro-btn-links .btn-01 {
-    display      : inline-block;
-    border       : 2px solid #0088c7;
-    padding      : 5px 15px;
-    margin       : 5px 5px;
+    display: inline-block;
+    border : 2px solid #0088c7;
+    padding: 5px 15px;
+    margin : 5px 5px;
 
 }
 
@@ -6731,11 +6172,11 @@ only screen and (min-width: 320px) and (max-width: 768px) {
 }
 
 .pro-btn-links .btn-02 {
-    display      : inline-block;
-    background   : #0088c7;
-    border       : 2px solid #0088c7;
-    padding      : 5px 15px;
-    margin       : 5px 5px;
+    display   : inline-block;
+    background: #0088c7;
+    border    : 2px solid #0088c7;
+    padding   : 5px 15px;
+    margin    : 5px 5px;
 
 }
 
@@ -6800,7 +6241,7 @@ only screen and (min-width: 320px) and (max-width: 768px) {
 
 .main-renew-buy {
     text-align   : center;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .main-renew-buy img {
@@ -6817,12 +6258,10 @@ only screen and (min-width: 320px) and (max-width: 768px) {
 }
 
 .personal-policy-detail-nav {
-    /* float: right; */
-    position     : absolute;
-    z-index      : 9;
-    /* text-align: right; */
-    right        : 41px;
-    top          : 20px;
+    position: absolute;
+    z-index : 9;
+    right   : 41px;
+    top     : 20px;
 }
 
 .personal-policy-detail-nav li a {
@@ -6830,40 +6269,59 @@ only screen and (min-width: 320px) and (max-width: 768px) {
 }
 
 .main-renew-buy .nav-pills>li {
-    float  : none;
-    display: inline-block;
+    float     : none;
+    display   : inline-block;
+    background: #f5f5f5;
+    border    : 3px;
 }
 
 .sub-side-nav {
     text-align: center;
-    margin    : 0 18px;
+
 }
 
 .sub-side-nav li {
-    display   : inline;
+    display   : inline-block;
     background: #eeeeee80;
+    float     : none;
 }
 
 .bg-form-grey {
-    background: #f3f3f3;
-
+    background   : #f8f7f7;
     border-radius: 10px;
     margin-bottom: 60px;
 }
 
-.pt-claim {
+/* for-claim and renew form  */
+/* .pt-claim {
     padding: 75px 15px 30px 15px;
-}
+} */
 
 .pt-renew {
     padding: 30px 15px 30px 15px;
 }
 
 .renew-title {
-    line-height  : 40px;
-    margin-top   : 0px;
-    margin-bottom: 20px;
-    font-size    : 20px;
+    line-height   : 40px;
+    margin-top    : 0px;
+    margin-bottom : 20px;
+    font-size     : 28px;
+    text-transform: uppercase;
+    color         : #0088c7;
+    font-weight   : 600;
+    text-align    : center;
+
+}
+
+.renew-title span {
+    line-height   : 2;
+    letter-spacing: 0.6px;
+    margin-bottom : 20px;
+    font-size     : 14px;
+    color         : #000;
+    text-align    : center;
+    text-transform: none;
+    font-weight   : 400;
 
 }
 
@@ -6887,9 +6345,228 @@ only screen and (min-width: 320px) and (max-width: 768px) {
 .nav-pills>li.active>a:hover,
 .nav-pills>li.active>a:focus {
     color           : #0088c7;
-    background-color: #eee;
+    background-color: #caeeff;
 }
 
+#heading {
+    text-transform: uppercase;
+    color         : #0088c7;
+    font-weight   : 600;
+}
+
+#msform {
+    text-align: center;
+    position  : relative;
+    margin-top: 20px
+}
+
+#msform fieldset {
+    background    : white;
+    border        : 0 none;
+    border-radius : 0.5rem;
+    box-sizing    : border-box;
+    width         : 100%;
+    margin        : 0;
+    padding-bottom: 70px;
+    position      : relative
+}
+
+.form-for-renew-buy .form-card {
+    text-align: left
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none
+}
+
+#msform input,
+#msform textarea {
+    border          : 1px solid #ccc;
+    box-sizing      : border-box;
+    color           : #2C3E50;
+    background-color: #ECEFF1;
+
+}
+
+#msform input:focus,
+#msform textarea:focus {
+    -moz-box-shadow   : none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow        : none !important;
+    border            : 1px solid #0088c7;
+    outline-width     : 0
+}
+
+#msform .action-button {
+    width        : 130px;
+    background   : #0088c7;
+    font-weight  : bold;
+    color        : white;
+    border       : 0 none;
+    border-radius: 0px;
+    cursor       : pointer;
+    padding      : 6px 5px;
+    margin       : 10px 15px 10px 5px;
+    float        : right;
+}
+
+#msform .action-button-submit {
+    width        : 130px;
+    background   : #0088c7;
+    font-weight  : bold;
+    color        : white;
+    border       : 0 none;
+    border-radius: 0px;
+    cursor       : pointer;
+    padding      : 6px 5px;
+    margin       : 10px 15px 10px 5px;
+    float        : right;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    background-color: #311B92
+}
+
+#msform .action-button-previous {
+    width        : 130px;
+    background   : #616161;
+    font-weight  : bold;
+    color        : white;
+    border       : 0 none;
+    border-radius: 0px;
+    cursor       : pointer;
+    padding      : 6px 5px;
+    margin       : 10px 15px 10px 5px;
+    float        : right
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    background-color: #000000
+}
+
+.form-for-renew-buy .card {
+    z-index : 0;
+    border  : none;
+    position: relative
+}
+
+.form-for-renew-buy .fs-title {
+    font-size    : 25px;
+    color        : #0088c7;
+    margin-bottom: 15px;
+    font-weight  : normal;
+    text-align   : left
+}
+
+.form-for-renew-buy .purple-text {
+    color      : #0088c7;
+    font-weight: normal
+}
+
+.form-for-renew-buy .steps {
+    font-size    : 25px;
+    color        : gray;
+    margin-bottom: 10px;
+    font-weight  : normal;
+    text-align   : right
+}
+
+.form-for-renew-buy .fieldlabels {
+    color     : gray;
+    text-align: left
+}
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow     : hidden;
+    color        : lightgrey
+}
+
+#progressbar .active {
+    color: #0088c7
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size      : 15px;
+    width          : 33%;
+    float          : left;
+    position       : relative;
+    font-weight    : 400
+}
+
+#progressbar #policy:before {
+    font-family: FontAwesome;
+    content    : "\f15c"
+}
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content    : "\f007"
+}
+
+#progressbar #payment:before {
+    font-family: FontAwesome;
+    content    : "\f030"
+}
+
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content    : "\f00c"
+}
+
+#progressbar li:before {
+    width        : 50px;
+    height       : 50px;
+    line-height  : 45px;
+    display      : block;
+    font-size    : 20px;
+    color        : #ffffff;
+    background   : lightgray;
+    border-radius: 50%;
+    margin       : 0 auto 10px auto;
+    padding      : 2px
+}
+
+#progressbar li:after {
+    content   : '';
+    width     : 100%;
+    height    : 2px;
+    background: lightgray;
+    position  : absolute;
+    left      : 0;
+    top       : 25px;
+    z-index   : -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #0088c7
+}
+
+.form-for-renew-buy .progress {
+    height: 20px
+}
+
+.form-for-renew-buy .progress-bar {
+    background-color: #0088c7
+}
+
+.form-for-renew-buy .successful-icon {
+    text-align: center;
+
+}
+
+.form-for-renew-buy .successful-icon .fit-image {
+    width        : auto;
+    height       : 80px;
+    object-fit   : cover;
+    margin-bottom: 23px;
+}
+
+/* for claim and renew form end here  */
 #lightgallery .col-sm-4 {
     padding-right: 0px;
     padding-left : 0px;
@@ -6908,6 +6585,18 @@ only screen and (min-width: 320px) and (max-width: 768px) {
 
 #gallery {
     margin-top: 60px;
+}
+
+#lightgallery .gallery-title {
+    font-size  : 16px;
+    color      : #fff;
+    line-height: 24px;
+    padding    : 15px;
+    bottom     : 0;
+    background : #0088c79e;
+    position   : absolute;
+    text-shadow: rgba(51, 51, 51, 0.47) 1px 2px 2px;
+    font-weight: 600;
 }
 
 /* sub-form area */
@@ -6930,9 +6619,8 @@ only screen and (min-width: 320px) and (max-width: 768px) {
 }
 
 .form-plus-sub li.active .open-form {
-    max-height       : 275px !important;
-    /* padding-bottom: 25px; */
-    transition       : max-height 0.5s ease, padding-bottom 0.5s ease;
+    max-height: 275px !important;
+    transition: max-height 0.5s ease, padding-bottom 0.5s ease;
 }
 
 .form-plus-sub li.active .closed-form {
@@ -6999,4 +6687,78 @@ only screen and (min-width: 320px) and (max-width: 768px) {
     .form-plus-sub .closed-form {
         font-size: 14px;
     }
+}
+
+/* for view information page  */
+.view-info ul.insurance-list span {
+    margin-right: 30px !important;
+}
+
+.view-main-title {
+    margin     : 40px 0 20px 0;
+    line-height: 37px;
+}
+
+/* for print page  */
+
+.form-print .personal-info {
+    padding: 25px 18%;
+    display: inline-block;
+    width  : 100%;
+}
+
+.form-print {
+    padding: 70px 0;
+}
+
+.form-print .personal-info li {
+    width: 50%;
+    float: left;
+}
+
+.form-print .personal-info li p {
+    margin     : 0px;
+    line-height: 30px;
+}
+
+.personal-info li span {
+    width      : 50%;
+    float      : left;
+    font-weight: 600;
+}
+
+.form-print .title {
+    margin        : 0;
+    padding       : 0;
+    font-weight   : 600;
+    text-transform: uppercase;
+}
+
+.form-print .letter-head {
+    text-align: center;
+    height    : 100%;
+}
+
+.form-print .letter-head img {
+    border-bottom: 2px solid #000;
+}
+
+.form-print .title img {
+    border    : 1px solid #000;
+    height    : 100px;
+    margin-top: 22px;
+}
+
+/* sitemap css */
+.site-map li {
+    float : left;
+    width : 50%;
+    margin: 5px 0;
+}
+
+.site-map-title {
+    font-size     : 18px;
+    font-weight   : 500;
+    text-transform: uppercase;
+    line-height   : 30px;
 }

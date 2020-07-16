@@ -110,26 +110,26 @@
                         </li>
                     </ul>
                 </li>
-{{--                @if(Session::get('adminDetails')['type']=="Admin")--}}
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-tasks"></i>
-                            <p>
-                                Products
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('products.index')}}"
-                                   class="nav-link {{ Route::currentRouteNamed('products.index') ? 'active' : '' }}">
-                                    {{--                                <i class="fas fa-sitemap nav-icon"></i>--}}
-                                    <p>Product Details</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-{{--                @endif--}}
+                {{--                @if(Session::get('adminDetails')['type']=="Admin")--}}
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-tasks"></i>
+                        <p>
+                            Products
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('products.index')}}"
+                               class="nav-link {{ Route::currentRouteNamed('products.index') ? 'active' : '' }}">
+                                {{--                                <i class="fas fa-sitemap nav-icon"></i>--}}
+                                <p>Product Details</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                {{--                @endif--}}
 
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -193,6 +193,34 @@
                             Re-insurers
                         </p>
                     </a>
+                </li>
+
+                <li class="nav-item has-treeview ">
+                    <a href="#"
+                       class="nav-link {{ Route::currentRouteNamed('buy.index') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user-alt"></i>
+                        <p>
+                            Buy & Renew Insurance
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('buy.index')}}"
+                               class="nav-link {{ Route::currentRouteNamed('buy.index') ? 'active' : '' }}">
+                                {{--                                <i class="fas fa-sitemap nav-icon"></i>--}}
+                                <p>Personal Information</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('renew.index')}}"
+                               class="nav-link {{ Route::currentRouteNamed('renew.index') ? 'active' : '' }}">
+                                <p>Renew Insurance</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item has-treeview ">

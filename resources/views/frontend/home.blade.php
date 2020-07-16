@@ -44,124 +44,142 @@
     </div>
     @php } @endphp
     <!-- ======= slider section ======= -->
-			<section id="slider">
-				<div class="swiper-container main-slider loading">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<figure class="slide-bgimg" style="background-image:url(http://united-insurance.hostingofprologic.com/images/anime_united.gif);">
-								<img src="http://united-insurance.hostingofprologic.com/images/anime_united.gif" class="entity-img" />
-							</figure>
-							<div class="content">
-								<p class="slider-title">Third Party Insurance</p>
-								<span class="caption">It covers loss and damage due to fire, accidental damage, natural
+    <section id="slider">
+        <div class="swiper-container main-slider loading">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg"
+                            style="background-image:url(http://united-insurance.hostingofprologic.com/images/anime_united.gif);">
+                        <img src="http://united-insurance.hostingofprologic.com/images/anime_united.gif"
+                             class="entity-img"/>
+                    </figure>
+                    <div class="content">
+                        <p class="slider-title">Third Party Insurance</p>
+                        <span class="caption">It covers loss and damage due to fire, accidental damage, natural
 									disasters, third party liability, and personal accident to the driver, conductor and
 									passengers. It can be extended to cover losses from riots, strikes, malicious acts
 									and terrorism.</span>
-								<ul class="pro-btn-links">
-									<li class="btn-01"><a href="{{url('/buy-renew')}}">Buy Policy</a></li>
-									<li class="btn-02"><a href="{{url('/buy-renew')}}">Renew Insurance</a></li>
-								</ul>
-							</div>
-						</div>
+                        <ul class="pro-btn-links">
+                            <li class="btn-01"><a href="{{url('/buy-renew/third-party')}}">Buy Policy</a></li>
+                            <li class="btn-02"><a href="{{url('/renew-insurance')}}">Renew Insurance</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-						<div class="swiper-slide">
-							<figure class="slide-bgimg" style="background-image:url(http://united-insurance.hostingofprologic.com/images/anime_united.gif)">
-								<img src="http://united-insurance.hostingofprologic.com/images/anime_united.gif" class="entity-img" />
-							</figure>
-							<div class="content">
-								<p class="slider-title">Property Insurance</p>
-								<span class="caption">It covers loss and damage due to fire, lightning and earthquake.
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg"
+                            style="background-image:url(http://united-insurance.hostingofprologic.com/images/anime_united.gif)">
+                        <img src="http://united-insurance.hostingofprologic.com/images/anime_united.gif"
+                             class="entity-img"/>
+                    </figure>
+                    <div class="content">
+                        <p class="slider-title">Property Insurance</p>
+                        <span class="caption">It covers loss and damage due to fire, lightning and earthquake.
 									It can be extended to cover losses from natural calamities, impact damages to
 									vandalism, terrorism.</span>
-								<ul class="pro-btn-links">
-									<li class="btn-01"><a href="{{url('/buy-renew')}}">Buy Policy</a></li>
-									<li class="btn-02"><a href="{{url('/buy-renew')}}">Renew Insurance</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<figure class="slide-bgimg" style="background-image:url(http://united-insurance.hostingofprologic.com/images/anime_united.gif)">
-								<img src="http://united-insurance.hostingofprologic.com/images/anime_united.gif" class="entity-img" />
-							</figure>
-							<div class="content">
-								<p class="slider-title">Travel Insurance</p>
-								<span class="caption">It covers the insured in the event of a sudden and unexpected
+                        <ul class="pro-btn-links">
+                            <li class="btn-01"><a href="{{url('/buy-renew/property')}}">Buy Policy</a></li>
+                            <li class="btn-02"><a href="{{url('/buy-renew/property')}}">Renew Insurance</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg"
+                            style="background-image:url(http://united-insurance.hostingofprologic.com/images/anime_united.gif)">
+                        <img src="http://united-insurance.hostingofprologic.com/images/anime_united.gif"
+                             class="entity-img"/>
+                    </figure>
+                    <div class="content">
+                        <p class="slider-title">Travel Insurance</p>
+                        <span class="caption">It covers the insured in the event of a sudden and unexpected
 									sickness or accident arising during travelling outside the country.</span>
-								<ul class="pro-btn-links">
-									<li class="btn-01"><a href="{{url('/buy-renew')}}">Buy Policy</a></li>
-									<li class="btn-02"><a href="{{url('/buy-renew')}}">Renew Insurance</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<figure class="slide-bgimg" style="background-image:url(http://united-insurance.hostingofprologic.com/images/anime_united.gif)">
-								<img src="http://united-insurance.hostingofprologic.com/images/anime_united.gif" class="entity-img" />
-							</figure>
-							<div class="content">
-								<p class="slider-title">Covid19 Insurance</p>
-								<span class="caption">It covers to the insured in case of any sudden and unexpected
+                        <ul class="pro-btn-links">
+                            <li class="btn-01"><a href="{{url('/buy-renew/travel')}}">Buy Policy</a></li>
+                            <li class="btn-02"><a href="{{url('/renew-insurance')}}">Renew Insurance</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg"
+                            style="background-image:url(http://united-insurance.hostingofprologic.com/images/anime_united.gif)">
+                        <img src="http://united-insurance.hostingofprologic.com/images/anime_united.gif"
+                             class="entity-img"/>
+                    </figure>
+                    <div class="content">
+                        <p class="slider-title">Covid19 Insurance</p>
+                        <span class="caption">It covers to the insured in case of any sudden and unexpected
 									illness and sickness (non-pre-existing).</span>
-								<ul class="pro-btn-links">
-									<li class="btn-01"><a href="{{url('/buy-renew')}}">Buy Policy</a></li>
-									<li class="btn-02"><a href="{{url('/buy-renew')}}">Renew Insurance</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- If we need navigation buttons -->
-					<div class="swiper-button-prev swiper-button-white"></div>
-					<div class="swiper-button-next swiper-button-white"></div>
-				</div>
+                        <ul class="pro-btn-links">
+                            <li class="btn-01"><a href="{{url('/buy-renew/corona-insurance')}}">Buy Policy</a></li>
+                            <li class="btn-02"><a href="{{url('/renew-insurance')}}">Renew Insurance</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev swiper-button-white"></div>
+            <div class="swiper-button-next swiper-button-white"></div>
+        </div>
 
-				<!-- Thumbnail navigation -->
-				<div class="swiper-container nav-slider loading">
-					<div class="swiper-wrapper" role="navigation">
-						<div class="swiper-slide">
-							<figure class="slide-bgimg" style="background-image:url(http://united-insurance.hostingofprologic.com/images/icons/thirdparty_icon.png)">
-								<img src="http://united-insurance.hostingofprologic.com/images/icons/thirdparty_icon.png" class="entity-img" />
-							</figure>
-							<div class="content">
-								<p class="slider-title">Third Party Insurance</p>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<figure class="slide-bgimg" style="background-image:url(http://united-insurance.hostingofprologic.com/images/icons/property_icon.png)">
-								<img src="http://united-insurance.hostingofprologic.com/images/icons/property_icon.png" class="entity-img" />
-							</figure>
-							<div class="content">
-								<p class="slider-title">Property Insurance</p>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<figure class="slide-bgimg" style="background-image:url(http://united-insurance.hostingofprologic.com/images/icons/travel_icon.png)">
-								<img src="http://united-insurance.hostingofprologic.com/images/icons/travel_icon.png" class="entity-img" />
-							</figure>
-							<div class="content">
-								<p class="slider-title">Travel Insurance</p>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<figure class="slide-bgimg" style="background-image:url(http://united-insurance.hostingofprologic.com/images/icons/covid_icon.png)">
-								<img src="http://united-insurance.hostingofprologic.com/images/icons/covid_icon.png" class="entity-img" />
-							</figure>
-							<div class="content">
-								<p class="slider-title">Covid19 Insurance</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- ======= slider section ======= -->
+        <!-- Thumbnail navigation -->
+        <div class="swiper-container nav-slider loading">
+            <div class="swiper-wrapper" role="navigation">
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg"
+                            style="background-image:url(http://united-insurance.hostingofprologic.com/images/icons/thirdparty_icon.png)">
+                        <img src="http://united-insurance.hostingofprologic.com/images/icons/thirdparty_icon.png"
+                             class="entity-img"/>
+                    </figure>
+                    <div class="content">
+                        <p class="slider-title">Third Party Insurance</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg"
+                            style="background-image:url(http://united-insurance.hostingofprologic.com/images/icons/property_icon.png)">
+                        <img src="http://united-insurance.hostingofprologic.com/images/icons/property_icon.png"
+                             class="entity-img"/>
+                    </figure>
+                    <div class="content">
+                        <p class="slider-title">Property Insurance</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg"
+                            style="background-image:url(http://united-insurance.hostingofprologic.com/images/icons/travel_icon.png)">
+                        <img src="http://united-insurance.hostingofprologic.com/images/icons/travel_icon.png"
+                             class="entity-img"/>
+                    </figure>
+                    <div class="content">
+                        <p class="slider-title">Travel Insurance</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg"
+                            style="background-image:url(http://united-insurance.hostingofprologic.com/images/icons/covid_icon.png)">
+                        <img src="http://united-insurance.hostingofprologic.com/images/icons/covid_icon.png"
+                             class="entity-img"/>
+                    </figure>
+                    <div class="content">
+                        <p class="slider-title">Covid19 Insurance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======= slider section ======= -->
 
     <main>
 
         <!-- ======= Welcome section ======= -->
+        @php if(!empty($abouts[0])) { @endphp
         <section class="main-service-content">
             <div class="container inner">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="title-section text-left">
                             <p>@lang('home.about_menu')</p>
+
                             @if(\App::getLocale() == "en")
                                 <h3>Best insurances for everyone</h3>
                             @else
@@ -171,21 +189,21 @@
                         <div class="col-lg-9 col-md-12">
                             @if(\App::getLocale() == "en")
                                 <div class="description-welcome ml-01 text-left">
-                                                                           @if(!empty($abouts))
-                                                                               {!! $abouts[0]->introduction !!}
-                                                                         @endif
-                                                                         <div class="read-more">
-                                                    <a href="{{url('/about-us')}}">Read More</a>
-                                                </div>
+                                    @if(!empty($abouts))
+                                        {!! $abouts[0]->introduction !!}
+                                    @endif
+                                    <div class="read-more">
+                                        <a href="{{url('/about-us')}}">Read More</a>
+                                    </div>
                                 </div>
                             @else
                                 <div class="description-welcome ml-01 text-left">
-                                                                            @if(!empty($abouts))
-                                                                                {!! $abouts[0]->introduction_nep !!}
-                                                                           @endif
-                                                                           <div class="read-more">
-                                                    <a href="{{url('/about-us')}}">Read More</a>
-                                                </div>
+                                    @if(!empty($abouts))
+                                        {!! $abouts[0]->introduction_nep !!}
+                                    @endif
+                                    <div class="read-more">
+                                        <a href="{{url('/about-us')}}">Read More</a>
+                                    </div>
                                 </div>
                             @endif
                         </div>
@@ -194,7 +212,8 @@
                                 <div class="main-service-box main-service-box_bottom">
                                     <div class="info-officer-title text-center">
                                         <h4>{{$chairman->team_position}}</h4>
-                                        <img src="{{ asset('images/team/default/'.$chairman->team_image) }}" alt="images">
+                                        <img src="{{ asset('images/team/default/'.$chairman->team_image) }}"
+                                             alt="images">
                                     </div>
                                     <div class="info-officer">
                                         <h5>{{$chairman->team_name}}</h5>
@@ -209,59 +228,61 @@
                             </div>
                         @endif
                     </div>
+
                 </div>
             </div>
         </section>
+        @php } @endphp
 
-        <!-- ======= /Welcome section ======= -->
-<!-- ======= number range ======= -->
-@isset($infos)
-				<section id="happy-customers" class="light-wrapper">
-					<div class="container inner">
-						<div class="row">
-							<div class="col-md-3 col-sm-6 col-xs-12 text-center br-1">
-								<div class="fact">
-									<div class="fact-number timer" data-perc="{{$infos[0]->experience}}">
-										<span class="factor text-white"></span>
-									</div>
-									<span class="fact-title">years of experience</span>
-								</div>
-							</div>
+    <!-- ======= /Welcome section ======= -->
+        <!-- ======= number range ======= -->
+        @php if(!empty($infos[0])) { @endphp
+        <section id="happy-customers" class="light-wrapper">
+            <div class="container inner">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center br-1">
+                        <div class="fact">
+                            <div class="fact-number timer" data-perc="{{$infos[0]->experience}}">
+                                <span class="factor text-white"></span>
+                            </div>
+                            <span class="fact-title">years of experience</span>
+                        </div>
+                    </div>
 
-							<div class="col-md-3 col-sm-6 col-xs-12 text-center br-1">
-								<div class="fact">
-									<div class="fact-number timer" data-perc="{{$infos[0]->customers}}">
-										<span class="factor  text-white"></span>
-									</div>
-									<span class="fact-title">Satisfied Customers</span>
-								</div>
-							</div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center br-1">
+                        <div class="fact">
+                            <div class="fact-number timer" data-perc="{{$infos[0]->customers}}">
+                                <span class="factor  text-white"></span>
+                            </div>
+                            <span class="fact-title">Satisfied Customers</span>
+                        </div>
+                    </div>
 
-							<div class="col-md-3 col-sm-6 col-xs-12 text-center br-1">
-								<div class="fact">
-									<div class="fact-number timer" data-perc="{{$infos[0]->support}}">
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center br-1">
+                        <div class="fact">
+                            <div class="fact-number timer" data-perc="{{$infos[0]->support}}">
 
-										<span class="factor  text-white"></span>
-										<span class="small-sub-title"> Hrs</span>
-									</div>
-									<span class="fact-title">Customer Support</span>
-								</div>
-							</div>
+                                <span class="factor  text-white"></span>
+                                <span class="small-sub-title"> Hrs</span>
+                            </div>
+                            <span class="fact-title">Customer Support</span>
+                        </div>
+                    </div>
 
-							<div class="col-md-3 col-sm-6 col-xs-12 text-center br-1">
-								<div class="fact">
-									<div class="fact-number timer" data-perc="{{$infos[0]->stable}}">
-										<span class="factor  text-white"></span>
-										<span class="small-sub-title percentage">%</span>
-									</div>
-									<span class="fact-title">Secure & Stable</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
- @endisset
-				<!-- ======= /number range ======= -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center br-1">
+                        <div class="fact">
+                            <div class="fact-number timer" data-perc="{{$infos[0]->stable}}">
+                                <span class="factor  text-white"></span>
+                                <span class="small-sub-title percentage">%</span>
+                            </div>
+                            <span class="fact-title">Secure & Stable</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @php } @endphp
+    <!-- ======= /number range ======= -->
 
 
         <!-- ======= Start Our Products ======= -->
@@ -277,14 +298,14 @@
                         </div>
                         @if(\App::getLocale() == "en")
                             <div class="description-welcome text-left">
-                                <p>Insurance coverage around your needs is easier than you think. Sometimes on purpose
-                                    injected humour and the like simple dummy.</p>
+{{--                                <p>Insurance coverage around your needs is easier than you think. Sometimes on purpose--}}
+{{--                                    injected humour and the like simple dummy.</p>--}}
 
                             </div>
                         @else
                             <div class="description-welcome text-left">
-                                <p>तपाईंको आवश्यकताको वरिपरि बीमा कभरेज तपाईंको सोच्नेभन्दा सजिलो छ। कहिलेकाँही
-                                    उद्देश्यको साथ इंजेक्टेड हास्य र यस्तै साधारण डमी।.</p>
+{{--                                <p>तपाईंको आवश्यकताको वरिपरि बीमा कभरेज तपाईंको सोच्नेभन्दा सजिलो छ। कहिलेकाँही--}}
+{{--                                    उद्देश्यको साथ इंजेक्टेड हास्य र यस्तै साधारण डमी।.</p>--}}
 
                             </div>
                         @endif
@@ -299,10 +320,10 @@
                                     <div class="single-insurance">
                                         @if(\App::getLocale() == "en")
                                             <div class="single-insurance-content">
-                                            <span class="service-icons">
-                                                <img
-                                                    src="{{ asset($product->product_icon) }}">
-                                                    </span>
+                                                <span class="service-icons">
+                                                    <img
+                                                        src="{{ asset($product->product_icon) }}">
+                                                        </span>
                                                 <h3>
                                                     <a href="{{ url('/products'.$product->path()) }}">{{$product->product_name}}</a>
                                                 </h3>
@@ -313,9 +334,9 @@
                                             </div>
                                         @else
                                             <div class="single-insurance-content">
-                                            <span class="service-icons">
-                                                <img
-                                                    src="{{ asset($product->product_icon) }}"> </span>
+                                                <span class="service-icons">
+                                                    <img
+                                                        src="{{ asset($product->product_icon) }}"> </span>
                                                 <h3>
                                                     <a href="{{url('/products'.$product->path())}}">{{$product->product_name_nep}}</a>
                                                 </h3>
@@ -338,23 +359,23 @@
         </section>
         <!-- ======= End Our Products ======= -->
 
-				<!-- ======= Quote Section ======= -->
-				<section class="tagline light-wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="home-call-to-action">
-									<a class="btn btn-grey" href="{{url('/get-a-quote')}}" title="Get A Quote">Get A Quote</a>
-									<p>United Insurance Co. (Nepal) Limited is an ISO 9001:2000 certified insurance
-										company.The company has started its operation from December 1, 1993 (Mangsir 16,
-										2050) after its registration with the Company.</p>
+        <!-- ======= Quote Section ======= -->
+        <section class="tagline light-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="home-call-to-action">
+                            <a class="btn btn-grey" href="{{url('/get-a-quote')}}" title="Get A Quote">Get A Quote</a>
+                            <p>United Insurance Co. (Nepal) Limited is an ISO 9001:2000 certified insurance
+                                company.The company has started its operation from December 1, 1993 (Mangsir 16,
+                                2050) after its registration with the Company.</p>
 
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<!-- ======= /Quote Section ======= -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======= /Quote Section ======= -->
         <!-- ======= Start Latest News ======= -->
         <section id="latestnews" class="light-wrapper">
             <div class="container inner">
@@ -366,8 +387,8 @@
                                 <h3>United Insurance News</h3>
                             </div>
                             <div class="description-welcome text-left">
-                                <p>Insurance coverage around your needs is easier than you think. Sometimes on purpose
-                                    injected humour and the like simple dummy.</p>
+{{--                                <p>Insurance coverage around your needs is easier than you think. Sometimes on purpose--}}
+{{--                                    injected humour and the like simple dummy.</p>--}}
                             </div>
                         </div>
                     @else
@@ -377,9 +398,9 @@
                                 <h3>युनाइटेड बीमा समाचार</h3>
                             </div>
                             <div class="description-welcome text-left">
-                                <p>तपाईंको आवश्यकताको वरिपरि बीमा कभरेज तपाईंको सोच्नेभन्दा सजिलो छ। कहिलेकाँही
-                                    उद्देश्यको साथ इंजेक्टेड हास्य र यस्तै साधारण डमी।.</p>
-                            </div>
+{{--                                <p>तपाईंको आवश्यकताको वरिपरि बीमा कभरेज तपाईंको सोच्नेभन्दा सजिलो छ। कहिलेकाँही--}}
+{{--                                    उद्देश्यको साथ इंजेक्टेड हास्य र यस्तै साधारण डमी।.</p>--}}
+{{--                            </div>--}}
                         </div>
                     @endif
                 </div>

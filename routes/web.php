@@ -218,6 +218,14 @@ Route::prefix('/admin')->namespace('Admin')->group(function () {
         Route::post('news/update/{id}', 'NewsController@update')->name('news.update');
         Route::get('news/delete/{id}', 'NewsController@destroy')->name('news.destroy');
 
+        //Buy Insurance Routes//
+        Route::get('buy-insurance','BuyInsuranceController@index')->name('buy.index');
+        Route::get('buy-insurance/{id}','BuyInsuranceController@view')->name('buy.view');
+        Route::get('buy-insurance-print/{id}','BuyInsuranceController@print')->name('buy.print');
+
+        //Renew Insurance//
+        Route::get('renew-insurance','RenewInsuranceController@index')->name('renew.index');
+
         //Quotes Routes//
         Route::get('quotes', 'QuotesController@index')->name('quote.index');
 
@@ -237,12 +245,12 @@ Route::prefix('/admin')->namespace('Admin')->group(function () {
 
 
         //Gallery Routes//
-        Route::get('galleries','GalleryController@index')->name('galleries.index');
-        Route::get('galleries-create','GalleryController@create')->name('galleries.create');
-        Route::post('galleries-create','GalleryController@store')->name('galleries.store');
-        Route::get('galleries-edit/{id}','GalleryController@edit')->name('galleries.edit');
-        Route::get('galleries-update/{id}','GalleryController@update')->name('galleries.update');
-        Route::get('galleries-delete/{id}','GalleryController@destroy')->name('galleries.destroy');
+        Route::get('galleries', 'GalleryController@index')->name('galleries.index');
+        Route::get('galleries-create', 'GalleryController@create')->name('galleries.create');
+        Route::post('galleries-create', 'GalleryController@store')->name('galleries.store');
+        Route::get('galleries-edit/{id}', 'GalleryController@edit')->name('galleries.edit');
+        Route::get('galleries-update/{id}', 'GalleryController@update')->name('galleries.update');
+        Route::get('galleries-delete/{id}', 'GalleryController@destroy')->name('galleries.destroy');
 
         //User Management Routes//
         Route::get('user-list', 'AdminController@userMgmt')->name('users.index');
@@ -363,15 +371,26 @@ Route::prefix('/')->namespace('Frontend')->group(function () {
     Route::get('/gallery', 'GalleryController@index')->name('gallery.index');
 
     //Buy Policy Routes//
-    Route::get('/buy-renew','BuyInsuranceController@index');
-    Route::post('/claim-renew/store','BuyInsuranceController@property');
-    Route::post('/claim-renew/policy','BuyInsuranceController@policy');
-    Route::match(['get','post'],'/claim-renew/corona','BuyInsuranceController@corona');
-    Route::match(['get','post'], '/claim-renew/coronaPolicy','BuyInsuranceController@policyCorona');
-    Route::match(['get','post'],'/claim-renew/travel','BuyInsuranceController@travel');
-    Route::match(['get','post'],'/claim-renew/travel-policy','BuyInsuranceController@travelPolicy');
-    Route::match(['get','post'],'/claim-renew/thirdParty','BuyInsuranceController@thirdParty');
-    Route::match(['get','post'],'/claim-renew/thirdPolicy','BuyInsuranceController@thirdPolicy');
+
+    //Thirdparty Insurance//
+    Route::get('/buy-renew/third-party', 'BuyInsuranceController@createThird');
+    Route::post('/buy-renew/third-party/store', 'BuyInsuranceController@thirdParty');
+
+    //Property Insurace//
+    Route::get('/buy-renew/property', 'BuyInsuranceController@createProperty');
+    Route::post('/buy-renew/property/store', 'BuyInsuranceController@storeProperty');
+
+
+    //Corona Insurance//
+    Route::get('/buy-renew/corona-insurance', 'BuyInsuranceController@createCorona');
+    Route::post('/buy-renew/corona-insurance/store', 'BuyInsuranceController@storeCorona');
+
+    //Travel Insurance//
+    Route::get('/buy-renew/travel', 'BuyInsuranceController@createTravel');
+    Route::post('/buy-renew/travel/store', 'BuyInsuranceController@storeTravel');
+
+    //RenewInsurance//
+    Route::match(['get', 'post'], '/renew-insurance', 'RenewInsuranceController@renew');
 
 
     Route::get('/calculator-motorcycle', function () {
@@ -399,7 +418,6 @@ Route::prefix('/')->namespace('Frontend')->group(function () {
     });
 
 });
-
 
 
 Route::get('locale/{locale}', function ($locale) {

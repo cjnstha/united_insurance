@@ -10,7 +10,8 @@ class CoronalPolicy extends Model
      * @var array
      */
     protected $guarded = [];
-
+    protected $table = 'coronal_policies';
+    protected $with = ['coronafamily'];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

@@ -63,8 +63,8 @@
                   <td>{{$surveyor->class}}</td>
                   <td>{{$surveyor->status}}</td>
                   <td class="d-inline-flex">
-                      <a href="{{route('about.edit', $surveyor->id)}}" class="btn btn-warning"><i class="fas fa-edit"></i> </a> &nbsp;
-                      <a href="{{route('about.delete', $surveyor->id)}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                      <a href="{{route('surveyors.edit', $surveyor->id)}}" class="btn btn-warning"><i class="fas fa-edit"></i> </a> &nbsp;
+                      <a href="{{route('surveyors.destroy', $surveyor->id)}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                   </td>
                 </tr>
                     @empty
