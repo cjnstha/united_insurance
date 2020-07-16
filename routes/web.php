@@ -23,7 +23,9 @@ Route::prefix('/admin')->namespace('Admin')->group(function () {
     Route::match(['get', 'post'], '/', 'AdminController@login');
     Route::group(['middleware' => ['admin']], function () {
         Route::get('dashboard', 'AdminController@dashboard');
-
+        Route::get('/test', function () {
+            return "your rare admin";
+        });
         //Admin Roles and Permission and Add Admin Routes//
         Route::get('settings', 'AdminController@settings')->name('update.password');
 
@@ -219,12 +221,12 @@ Route::prefix('/admin')->namespace('Admin')->group(function () {
         Route::get('news/delete/{id}', 'NewsController@destroy')->name('news.destroy');
 
         //Buy Insurance Routes//
-        Route::get('buy-insurance','BuyInsuranceController@index')->name('buy.index');
-        Route::get('buy-insurance/{id}','BuyInsuranceController@view')->name('buy.view');
-        Route::get('buy-insurance-print/{id}','BuyInsuranceController@print')->name('buy.print');
+        Route::get('buy-insurance', 'BuyInsuranceController@index')->name('buy.index');
+        Route::get('buy-insurance/{id}', 'BuyInsuranceController@view')->name('buy.view');
+        Route::get('buy-insurance-print/{id}', 'BuyInsuranceController@print')->name('buy.print');
 
         //Renew Insurance//
-        Route::get('renew-insurance','RenewInsuranceController@index')->name('renew.index');
+        Route::get('renew-insurance', 'RenewInsuranceController@index')->name('renew.index');
 
         //Quotes Routes//
         Route::get('quotes', 'QuotesController@index')->name('quote.index');

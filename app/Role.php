@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
-    public function users(){
-        return $this->belongsToMany('App\Admin');
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
     }
 }

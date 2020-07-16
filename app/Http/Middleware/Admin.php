@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class Admin
 {
@@ -16,9 +16,9 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::guard('admin')->check()) {
-            return redirect('/admin');
+        if(Auth::guard('admin')->user()->hasAnyRole('admin')){
+            return $next($request);
         }
-        return $next($request);
+        abort(404);
     }
 }

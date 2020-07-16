@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Blade;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -24,7 +25,13 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
-        //
+           Blade::if('hasrole',function ($expression){
+             if(Auth::guard('admin')->user()){
+                 if (Auth::guard('admin')->user()->hasAnyRole($expression)){
+                     return true;
+                 }
+             }
+             return false;
+         });
     }
 }
