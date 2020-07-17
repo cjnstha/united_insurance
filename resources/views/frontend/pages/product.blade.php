@@ -201,9 +201,9 @@
                                             class="active in"
                                             @endif
                                             @if(Request::path() == 'products')
-                                                @if($loop->first)
-                                                    class="active "
-                                                @endif
+                                            @if($loop->first)
+                                            class="active "
+                                            @endif
                                             @endif
                                             id="product-{{ $product->id }}">
                                             <a href="#{{$product->id}}" @if($loop->first) class="active"
@@ -231,7 +231,7 @@
                                     @if(\App::getlocale() == "en")
                                         <div class="tab-pane fade
                                             @if('products'.$product->path() == Request::path())
-                                            active in
+                                                active in
                                             @endif
                                             @if(Request::path() == 'products')
                                                 @if($loop->first)
@@ -289,7 +289,7 @@
                                                 <div class="col-md-4">
                                                     <div class="brochures">
                                                         <div class="insurance-service-title">
-                                                            <h4>Proposal Form</h4>
+                                                            <h4>Claim Form</h4>
                                                             <span class="decor_default"></span>
                                                         </div>
                                                         <a href="{{asset($product->file_pdf)}}" download
@@ -298,6 +298,8 @@
                                                             <span class="transition3s"><i
                                                                     class="fa fa-file-pdf-o"></i></span>
                                                         </a>
+                                                        <h4>Proposal Form</h4>
+                                                        <span class="decor_default"></span>
                                                         <a href="{{asset($product->file_doc)}}" download
                                                            class="doc_download transition3s">
                                                             Download.DOC

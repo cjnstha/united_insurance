@@ -30,7 +30,7 @@ class ProductsController extends Controller
             $image = $request->file('product_image');
             $ext = $image->getClientOriginalExtension();
             $destination = 'images/products';
-            $photo_name = md5(time());
+            $photo_name = md5(time() +1 );
             $photo_original_names = $destination . '/' . $photo_name . '.' . $ext;
             $image->move($destination, $photo_original_names);
             $product_image = $photo_original_names;
@@ -40,7 +40,7 @@ class ProductsController extends Controller
             $image = $request->file('product_icon');
             $ext = $image->getClientOriginalExtension();
             $destination = 'images/products';
-            $photo_name = md5(time());
+            $photo_name = md5(time() + 2);
             $photo_original_name = $destination . '/' . $photo_name . '.' . $ext;
             $image->move($destination, $photo_original_name);
             $product_icon = $photo_original_name;
@@ -50,19 +50,19 @@ class ProductsController extends Controller
             $image = $request->file('file_pdf');
             $ext = $image->getClientOriginalExtension();
             $destination = 'file/products';
-            $photo_name = md5(time());
+            $photo_name = md5(time() + 3);
             $photo_original_namess = $destination . '/' . $photo_name . '.' . $ext;
             $image->move($destination, $photo_original_namess);
-            $product_pdf = $photo_original_name;
+            $product_pdf = $photo_original_namess;
         }
         if ($request->hasfile('file_doc')) {
             $image = $request->file('file_doc');
             $ext = $image->getClientOriginalExtension();
             $destination = 'file/products';
-            $photo_name = md5(time());
-            $photo_original_name = $destination . '/' . $photo_name . '.' . $ext;
-            $image->move($destination, $photo_original_name);
-            $product_doc = $photo_original_name;
+            $photo_name = md5(time() + 4);
+            $photo_original_name_docs = $destination . '/' . $photo_name . '.' . $ext;
+            $image->move($destination, $photo_original_name_docs);
+            $product_doc = $photo_original_name_docs;
         }
 
         $products = ProductDetail::create([
