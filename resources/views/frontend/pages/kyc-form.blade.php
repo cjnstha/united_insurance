@@ -12,16 +12,15 @@
                         <!-- Nav tabs -->
                         <ul class="nav-side nav-tabs  tabs-left"><!-- 'tabs-right' for right tabs -->
 
-                            <li><a href="{{url('/agm-minute')}}"> AGM Minute <i
+                            <li><a href="{{url('/agm-minute')}}"> @lang('home.agm_minute') <i
                                         class="fa fa-angle-right"></i></a></li>
-                            <li class="active"><a href="{{url('/kyc-form')}}">KYC Forms <i
+                            <li class="active"><a href="{{url('/kyc-form')}}">@lang('home.kyc-form') <i
                                         class="fa fa-angle-right"></i></a></li>
-                            <li><a href="{{url('/policy-proposal-form')}}">Policy Proposal Form <i
+                            <li><a href="{{url('/policy-proposal-form')}}">@lang('home.proposal-form') <i
                                         class="fa fa-angle-right"></i></a></li>
-                            <li><a href="{{url('/right-share')}}">Right Share <i class="fa fa-angle-right"></i></a></li>
-                            <li><a href="{{url('/claim-form')}}">Claim Form <i class="fa fa-angle-right"></i></a></li>
-                            <li><a href="{{url('/surveyor-listing-application-form')}}">Surveyor Listing Application
-                                    Form <i
+                            <li><a href="{{url('/right-share')}}">@lang('home.right-share') <i class="fa fa-angle-right"></i></a></li>
+                            <li><a href="{{url('/claim-form')}}">@lang('home.claim-form') <i class="fa fa-angle-right"></i></a></li>
+                            <li><a href="{{url('/surveyor-listing-application-form')}}">@lang('home.surveyors-form')<i
                                         class="fa fa-angle-right"></i></a></li>
                             {{--                         <li><a href="branch-download.html">Branch Download <i class="fa fa-angle-right"></i></a></li>--}}
                         </ul>

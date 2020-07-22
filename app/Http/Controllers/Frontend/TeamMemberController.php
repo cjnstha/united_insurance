@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class TeamMemberController extends Controller
 {
     public function index(){
-         $orders = TeamMember::where('hierarchy','1')->get();
+        $orders = TeamMember::where('hierarchy','1')->get();
         $teams = TeamMember::where('hierarchy','!=','1')->orderBy('hierarchy','asc')->get();
         return view('frontend.pages.team-members',compact('teams','orders'));
     }

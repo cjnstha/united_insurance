@@ -23,9 +23,9 @@ Route::prefix('/admin')->namespace('Admin')->group(function () {
     Route::match(['get', 'post'], '/', 'AdminController@login');
     Route::group(['middleware' => ['admin']], function () {
         Route::get('dashboard', 'AdminController@dashboard');
-        Route::get('/test', function () {
-            return "your rare admin";
-        });
+//        Route::get('/test', function () {
+//            return "your rare admin";
+//        });
         //Admin Roles and Permission and Add Admin Routes//
         Route::get('settings', 'AdminController@settings')->name('update.password');
 
@@ -432,3 +432,15 @@ Route::get('locale/{locale}', function ($locale) {
 
 });
 
+Route::prefix('teacher')->middleware(['auth','teacher'])->group(function (){
+	Route::get('/', 'TeacherController@index')->name('teacher.dashboard');
+    Route::get('/results', 'TeacherController@showSurvey');
+    Route::get('/results/{survey}', 'TeacherController@show');
+});
+
+Route::middleware(['auth','student'])->group(function(){
+	Route::get('/survey','SurveyController@index')->name('survey');
+    Route::get('/surveylist/{survey}','SurveyController@surveyList');
+    Route::get('/survey/{survey}/teacher/{teacher}','SurveyController@show');
+	Route::post('/survey/{survey}/teacher/{teacher}','SurveyController@store');
+});

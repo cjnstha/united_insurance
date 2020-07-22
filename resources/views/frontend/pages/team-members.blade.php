@@ -51,11 +51,11 @@
                             <div class="team-item bod-head col-xs-12 col-sm-6 col-md-3">
                                 <div class="team-item-block">
                                     <div class="team-thumb">
-                                        <a href="{{url('/team-member-detail',$chairman->id)}}"><img
-                                                src="{{asset('/images/team/large/'.$chairman->team_image)}}"
-                                                alt="{{$chairman->team_name}}"></a>
+                                        <a href="{{url('/team-member-detail',$order->id)}}"><img
+                                                src="{{asset('/images/team/default/'.$order->team_image)}}"
+                                                alt="{{$order->team_name}}"></a>
                                         <div class="team-overlay">
-                                            <p>{{\Illuminate\Support\Str::limit($chairman->team_description_nep, 144)}}</p>
+                                            <p>{{\Illuminate\Support\Str::limit($order->team_description_nep, 144)}}</p>
                                             <div class="team-icons">
                                                 <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
                                                 <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
@@ -66,9 +66,9 @@
                                     </div>
                                     <div class="info-team">
                                         <h5>
-                                            <a href="{{url('/team-member-detail',$chairman->id)}}">{{$chairman->team_name_nep}}</a>
+                                            <a href="{{url('/team-member-detail',$order->id)}}">{{$order->team_name_nep}}</a>
                                         </h5>
-                                        <p class="team-company">{{$chairman->team_position_nep}}</p>
+                                        <p class="team-company">{{$order->team_position_nep}}</p>
                                     </div>
                                 </div>
                             </div>

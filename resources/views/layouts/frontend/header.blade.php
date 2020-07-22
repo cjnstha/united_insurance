@@ -102,6 +102,13 @@
                                  <!-- li end -->
                                 <li class="{{ Route::currentRouteNamed('products') ? 'active' : '' }}">
                                     <a class="{{ Route::currentRouteNamed('products') ? 'active' : '' }}" href="{{url('/products')}}">@lang('home.policy_product')</a>
+                                    <ul class="dropdown-menu">
+											<li><a href="property-insurance.html">Property Insurance</a></li>
+											<li><a href="motor-insurance.html">Motor Insurance</a></li>
+											<li><a href="home-insurance.html">Home Insurance</a></li>
+											<li><a href="micro-insurance.html">Micro Insurance</a></li>
+											<li><a href="fire-insurance.html">Fire Insurance</a></li>
+										</ul>
                                 </li>
                                 <!-- li end -->
 
